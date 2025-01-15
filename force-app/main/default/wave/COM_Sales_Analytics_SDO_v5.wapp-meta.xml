@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetIcon>/analytics/wave/web/proto/images/app/icons/6.png</assetIcon>
+    <folder>COM_Sales_Analytics_SDO_v5</folder>
+    <masterLabel>COM_Sales Analytics SDO v5</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>coms4maltese@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>Sales_Analytics_Flex</templateOrigin>
+    <templateVersion>5.0</templateVersion>
+</WaveApplication>

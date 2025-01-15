@@ -1,0 +1,107 @@
+{
+  "version" : "55.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Account_Name", "Subscription_ID", "Account_ID", "Request_supervisor", "Problem_with_add_on_creation", "Problem_with_IMEI", "CLV", "Problem_with_service_consumption_details", "Problem_with_service_restoration", "Problem_with_change_of_SIM", "Tenure_Months", "Problem_with_change_to_retention_plan", "Request_for_adjustments", "Payment_Frequency_Trend", "Topup_Amount_Trend", "Data_Usage_Trend", "Problem_with_mobile_configuration", "Problem_with_SMS", "Problem_with_suspensions", "Problem_with_voice", "Problem_with_bill_adjustment_and_refunds", "Problem_with_top_up_creation", "Problem_with_delivery", "Problem_with_data", "Problem_with_change_of_mobile_phone" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "B2C Churn Demo Predictors",
+          "name" : "B2C_Churn_Demo_Predictors"
+        },
+        "sampleDetails" : {
+          "type" : "TopN"
+        }
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "LastName", "FirstName" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Account",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Account"
+        },
+        "sampleDetails" : {
+          "type" : "TopN"
+        }
+      }
+    },
+    "UPDATE0" : {
+      "action" : "update",
+      "sources" : [ "LOAD_DATASET0", "LOAD_DATASET1" ],
+      "parameters" : {
+        "leftKeys" : [ "Account_Name" ],
+        "rightKeys" : [ "Name" ],
+        "updateColumns" : {
+          "Account_ID" : "Id"
+        }
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "UPDATE0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "B2C Churn Demo Predictors",
+          "name" : "B2C_Churn_Demo_Predictors",
+          "folderName" : "Demo_B2C_Churn"
+        }
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "B2C Churn Demo Predictors",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET1" : {
+        "label" : "Account",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "UPDATE0" : {
+        "label" : "Update 0",
+        "type" : "UPDATE",
+        "top" : 112,
+        "left" : 252
+      },
+      "OUTPUT0" : {
+        "label" : "Save Dataset",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 112,
+        "left" : 392
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "UPDATE0"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "UPDATE0"
+    }, {
+      "source" : "UPDATE0",
+      "target" : "OUTPUT0"
+    } ],
+    "hiddenColumns" : [ ],
+    "assetType" : "TCRM"
+  }
+}

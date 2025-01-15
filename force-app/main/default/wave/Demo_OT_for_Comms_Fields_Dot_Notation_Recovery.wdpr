@@ -1,0 +1,1171 @@
+{
+  "version" : "55.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Account", "Order_Status", "Order_Jeopardy", "Order_Name", "Orchestration_Item_ID", "State_Bucket", "Task_Jeopardy", "Task_Type", "Orchestration_Item_Sequence", "Order_Embedded_Record", "Fallout_Analysis_Record", "Order", "Order_ID", "Order_Start_Date", "Due_Date", "Milestone", "Parent_Order", "Product_Name", "Task_Time", "Task_Name", "Or_Item_Due_Date", "Task_Status", "Orchestration_Item_Definition", "Fallout_Category", "dummy_Failed_Orders", "Task_Time_Hours", "Order_Days_Open", "LastProcessedDate" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "SRC Orders w/ Orchestration Items & Parent Product",
+          "name" : "SRC_Orders_w_Orchestration_Items_Parent_Product"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES0" : {
+      "action" : "schema",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order_ID",
+          "newProperties" : {
+            "label" : "Order ID",
+            "name" : "Id"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES1" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Account",
+          "newProperties" : {
+            "label" : "Account",
+            "name" : "Account.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES2" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES1" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order_Status",
+          "newProperties" : {
+            "label" : "Order Status",
+            "name" : "vlocity_cmt__OrderStatus__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES3" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES2" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order_Jeopardy",
+          "newProperties" : {
+            "label" : "Order Jeopardy",
+            "name" : "vlocity_cmt__JeopardyStatus__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES4" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES3" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order_Start_Date",
+          "newProperties" : {
+            "label" : "Order Start Date",
+            "name" : "EffectiveDate"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES5" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES4" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order_Name",
+          "newProperties" : {
+            "label" : "Order Name",
+            "name" : "Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES6" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES5" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Task_Name",
+          "newProperties" : {
+            "label" : "Task Name",
+            "name" : "Or_Item.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES7" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES6" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Orchestration_Item_ID",
+          "newProperties" : {
+            "label" : "Orchestration Item ID",
+            "name" : "Or_Item.Id"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES8" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES7" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Task_Jeopardy",
+          "newProperties" : {
+            "label" : "Task Jeopardy",
+            "name" : "Or_Item.vlocity_cmt__JeopardyStatus__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES9" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES8" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Task_Type",
+          "newProperties" : {
+            "label" : "Task Type",
+            "name" : "Or_Item.vlocity_cmt__OrchestrationItemType__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES10" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES9" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Fallout_Analysis_Record",
+          "newProperties" : {
+            "label" : "Fallout Analysis Record",
+            "name" : "IsFallout_Analysis_Record"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES11" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES10" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order",
+          "newProperties" : {
+            "label" : "Order",
+            "name" : "OrderNumber"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES12" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES11" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Orchestration_Item_Sequence",
+          "newProperties" : {
+            "label" : "Orchestration Item Sequence",
+            "name" : "Or_Item.Seq"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES13" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES12" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Task_Status",
+          "newProperties" : {
+            "label" : "Task Status",
+            "name" : "Or_Item.vlocity_cmt__State__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES14" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES13" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Parent_Order",
+          "newProperties" : {
+            "label" : "Parent Order",
+            "name" : "Parent.OrderNumber"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES15" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES14" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Product_Name",
+          "newProperties" : {
+            "label" : "Product Name",
+            "name" : "Product.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES16" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES15" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Orchestration_Item_Definition",
+          "newProperties" : {
+            "label" : "Orchestration Item Definition",
+            "name" : "Or_Item.vlocity_cmt__OrchestrationItemDefinitionId__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES28" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES16" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order_Embedded_Record",
+          "newProperties" : {
+            "label" : "Order Embedded Record",
+            "name" : "IsOrder_Embedded_Record"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES29" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES28" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "State_Bucket",
+          "newProperties" : {
+            "label" : "State Bucket",
+            "name" : "Or_Item.State_bucket"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES30" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES29" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Or_Item_Due_Date",
+          "newProperties" : {
+            "label" : "Or_Item.Due Date",
+            "name" : "Or_Item.vlocity_cmt__DueDate__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES31" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES30" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Due_Date",
+          "newProperties" : {
+            "label" : "Due Date",
+            "name" : "vlocity_cmt__DueDate__c"
+          }
+        } ]
+      }
+    },
+    "FORMULA0" : {
+      "action" : "formula",
+      "sources" : [ "EDIT_ATTRIBUTES31" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ElapsedDays",
+          "label" : "ElapsedDays",
+          "formulaExpression" : "datediff(now(), to_date(LastProcessedDate))",
+          "precision" : 16,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA1" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATE_ONLY",
+          "name" : "StartDateAux",
+          "label" : "StartDateAux",
+          "formulaExpression" : "to_date(EffectiveDate)",
+          "format" : "yyyy-MM-dd",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA1" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "EffectiveDate", "LastProcessedDate" ]
+        }
+      }
+    },
+    "FORMULA2" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATE_ONLY",
+          "name" : "EffectiveDate",
+          "label" : "Order Start Date",
+          "formulaExpression" : "date_add(to_date(StartDateAux), ElapsedDays)",
+          "format" : "yyyy-MM-dd",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA3" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA2" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATETIME",
+          "name" : "LastProcessedDate",
+          "label" : "LastProcessedDate",
+          "formulaExpression" : "now()",
+          "format" : "yyyy-MM-dd",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS1" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA3" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "StartDateAux", "ElapsedDays" ]
+        }
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "DROP_FIELDS1" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order Tracking - Orders w/ Orchestration Items & Parent Product",
+          "name" : "Demo_OT_Orders_Orc_Items_PProduct",
+          "folderName" : "Demo_Order_Tracking_for_Comms"
+        }
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Orchestration_Item_Definition", "Orchestration_Item_Name", "Average_Hour_Duration" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "SRC Avg Time to Complete Manual Task",
+          "name" : "SRC_Avg_Time_to_Complete_Manual_Task"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Orchestration_Item", "Service_Order_Jeopardy_Status", "Service_Order_Task_Status", "Latest_Record", "Service_Order_Task_Jeopardy_Status", "Service_Order_Status", "Service_Order_Task_Name", "Service_Order_Number", "Task_Time" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "SRC SOM Data",
+          "name" : "SRC_SOM_Data"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET3" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Milestone", "Fallout_Category", "Product_Name", "Orchestration_Scenario_Name" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "SRC Orchestration Item Sequence",
+          "name" : "SRC_Orchestration_Item_Sequence"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET4" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Status", "Fallout_Category", "Product_Name", "Account_Name", "Quote_ID", "Created_Date", "Fatally_Failed_Orders", "LastProcessedDate" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "SRC Quotes with Parent Product",
+          "name" : "SRC_Quotes_with_Parent_Product"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES17" : {
+      "action" : "schema",
+      "sources" : [ "LOAD_DATASET1" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Average_Hour_Duration",
+          "newProperties" : {
+            "label" : "Average Hour Duration",
+            "name" : "AVG_Hour_Duration"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES18" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES17" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Orchestration_Item_Definition",
+          "newProperties" : {
+            "label" : "Orchestration Item Definition",
+            "name" : "Or_Item.vlocity_cmt_OrchestrationItemDefinitionId__c"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES19" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES18" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Orchestration_Item_Name",
+          "newProperties" : {
+            "label" : "Orchestration Item Name",
+            "name" : "Or_Item.Name"
+          }
+        } ]
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "EDIT_ATTRIBUTES19" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order Tracking - Avg Time to Complete Manual Task",
+          "name" : "Demo_OT_Avg_Time_MTask",
+          "folderName" : "Demo_Order_Tracking_for_Comms"
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES20" : {
+      "action" : "schema",
+      "sources" : [ "LOAD_DATASET3" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Product_Name",
+          "newProperties" : {
+            "label" : "Product Name",
+            "name" : "Product.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES27" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES20" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Orchestration_Scenario_Name",
+          "newProperties" : {
+            "label" : "Orchestration Scenario Name",
+            "name" : "scenario.Name"
+          }
+        } ]
+      }
+    },
+    "OUTPUT2" : {
+      "action" : "save",
+      "sources" : [ "EDIT_ATTRIBUTES27" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order Tracking - Orchestration Item Sequence",
+          "name" : "Demo_OT_Orc_Item_Seq",
+          "folderName" : "Demo_Order_Tracking_for_Comms"
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES22" : {
+      "action" : "schema",
+      "sources" : [ "LOAD_DATASET4" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Created_Date",
+          "newProperties" : {
+            "label" : "Created Date",
+            "name" : "CreatedDate"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES23" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES22" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Product_Name",
+          "newProperties" : {
+            "label" : "Product Name",
+            "name" : "QuoteLineItem.Product.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES24" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES23" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Quote_ID",
+          "newProperties" : {
+            "label" : "Quote ID",
+            "name" : "Id"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES25" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES24" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Account_Name",
+          "newProperties" : {
+            "label" : "Account Name",
+            "name" : "Account.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES26" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES25" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Fatally_Failed_Orders",
+          "newProperties" : {
+            "label" : "%Fatally Failed Orders",
+            "name" : "per_Fatally_Failed_Orders"
+          }
+        } ]
+      }
+    },
+    "FORMULA4" : {
+      "action" : "formula",
+      "sources" : [ "EDIT_ATTRIBUTES26" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "ElapsedDays",
+          "label" : "ElapsedDays",
+          "formulaExpression" : "datediff(now(), to_date(LastProcessedDate))",
+          "precision" : 16,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA5" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA4" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATE_ONLY",
+          "name" : "CreatedDateAux",
+          "label" : "CreatedDateAux",
+          "formulaExpression" : "to_date(CreatedDate)",
+          "format" : "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS2" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA5" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "CreatedDate", "LastProcessedDate" ]
+        }
+      }
+    },
+    "FORMULA6" : {
+      "action" : "formula",
+      "sources" : [ "DROP_FIELDS2" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATE_ONLY",
+          "name" : "CreatedDate",
+          "label" : "Created Date",
+          "formulaExpression" : "date_add(to_date(CreatedDateAux), ElapsedDays)",
+          "format" : "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA7" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA6" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATETIME",
+          "name" : "LastProcessedDate",
+          "label" : "LastProcessedDate",
+          "formulaExpression" : "now()",
+          "format" : "yyyy-MM-dd",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "DROP_FIELDS3" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA7" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "ElapsedDays", "CreatedDateAux" ]
+        }
+      }
+    },
+    "EDIT_ATTRIBUTES21" : {
+      "action" : "schema",
+      "sources" : [ "LOAD_DATASET2" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Latest_Record",
+          "newProperties" : {
+            "label" : "Latest Record",
+            "name" : "IsLatest_Record"
+          }
+        } ]
+      }
+    },
+    "OUTPUT3" : {
+      "action" : "save",
+      "sources" : [ "EDIT_ATTRIBUTES21" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order Tracking - SOM Data",
+          "name" : "Demo_OT_SOM_Data",
+          "folderName" : "Demo_Order_Tracking_for_Comms"
+        }
+      }
+    },
+    "OUTPUT4" : {
+      "action" : "save",
+      "sources" : [ "DROP_FIELDS3" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order Tracking - Quotes with Parent Product",
+          "name" : "Demo_OT_Quotes_PProduct",
+          "folderName" : "Demo_Order_Tracking_for_Comms"
+        }
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "SRC Orders w/ Orchestration Items & Parent Product",
+        "type" : "LOAD_DATASET",
+        "top" : 112.1,
+        "left" : 112.80000000000001,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform 0",
+        "type" : "TRANSFORM",
+        "top" : 112.1,
+        "left" : 252.8,
+        "graph" : {
+          "EDIT_ATTRIBUTES0" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES1" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES2" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES3" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES4" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES5" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES6" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES7" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES8" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES9" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES10" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES11" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES12" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES13" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES14" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES15" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES16" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES28" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES29" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES30" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES31" : {
+            "label" : "Edit Attributes"
+          },
+          "FORMULA0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA1" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "DROP_FIELDS0" : {
+            "label" : "Drop Columns"
+          },
+          "FORMULA2" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA3" : {
+            "parameters" : {
+              "type" : "DATE_NOW_UI"
+            },
+            "label" : "Formula Now"
+          },
+          "DROP_FIELDS1" : {
+            "label" : "Drop Columns"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES0",
+          "target" : "EDIT_ATTRIBUTES1"
+        }, {
+          "source" : "EDIT_ATTRIBUTES1",
+          "target" : "EDIT_ATTRIBUTES2"
+        }, {
+          "source" : "EDIT_ATTRIBUTES2",
+          "target" : "EDIT_ATTRIBUTES3"
+        }, {
+          "source" : "EDIT_ATTRIBUTES3",
+          "target" : "EDIT_ATTRIBUTES4"
+        }, {
+          "source" : "EDIT_ATTRIBUTES4",
+          "target" : "EDIT_ATTRIBUTES5"
+        }, {
+          "source" : "EDIT_ATTRIBUTES5",
+          "target" : "EDIT_ATTRIBUTES6"
+        }, {
+          "source" : "EDIT_ATTRIBUTES6",
+          "target" : "EDIT_ATTRIBUTES7"
+        }, {
+          "source" : "EDIT_ATTRIBUTES7",
+          "target" : "EDIT_ATTRIBUTES8"
+        }, {
+          "source" : "EDIT_ATTRIBUTES8",
+          "target" : "EDIT_ATTRIBUTES9"
+        }, {
+          "source" : "EDIT_ATTRIBUTES9",
+          "target" : "EDIT_ATTRIBUTES10"
+        }, {
+          "source" : "EDIT_ATTRIBUTES10",
+          "target" : "EDIT_ATTRIBUTES11"
+        }, {
+          "source" : "EDIT_ATTRIBUTES11",
+          "target" : "EDIT_ATTRIBUTES12"
+        }, {
+          "source" : "EDIT_ATTRIBUTES12",
+          "target" : "EDIT_ATTRIBUTES13"
+        }, {
+          "source" : "EDIT_ATTRIBUTES13",
+          "target" : "EDIT_ATTRIBUTES14"
+        }, {
+          "source" : "EDIT_ATTRIBUTES14",
+          "target" : "EDIT_ATTRIBUTES15"
+        }, {
+          "source" : "EDIT_ATTRIBUTES15",
+          "target" : "EDIT_ATTRIBUTES16"
+        }, {
+          "source" : "EDIT_ATTRIBUTES16",
+          "target" : "EDIT_ATTRIBUTES28"
+        }, {
+          "source" : "EDIT_ATTRIBUTES28",
+          "target" : "EDIT_ATTRIBUTES29"
+        }, {
+          "source" : "EDIT_ATTRIBUTES29",
+          "target" : "EDIT_ATTRIBUTES30"
+        }, {
+          "source" : "EDIT_ATTRIBUTES30",
+          "target" : "EDIT_ATTRIBUTES31"
+        }, {
+          "source" : "EDIT_ATTRIBUTES31",
+          "target" : "FORMULA0"
+        }, {
+          "source" : "FORMULA0",
+          "target" : "FORMULA1"
+        }, {
+          "source" : "FORMULA1",
+          "target" : "DROP_FIELDS0"
+        }, {
+          "source" : "DROP_FIELDS0",
+          "target" : "FORMULA2"
+        }, {
+          "source" : "FORMULA2",
+          "target" : "FORMULA3"
+        }, {
+          "source" : "FORMULA3",
+          "target" : "DROP_FIELDS1"
+        } ]
+      },
+      "OUTPUT0" : {
+        "label" : "Save Orders w/ Orch Items & Parent Products",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 112.1,
+        "left" : 392.8
+      },
+      "LOAD_DATASET1" : {
+        "label" : "SRC Avg Time to Complete Manual Task",
+        "type" : "LOAD_DATASET",
+        "top" : 252.1,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET2" : {
+        "label" : "SRC SOM Data",
+        "type" : "LOAD_DATASET",
+        "top" : 392.1,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET3" : {
+        "label" : "SRC Orchestration Item Sequence",
+        "type" : "LOAD_DATASET",
+        "top" : 532.1,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET4" : {
+        "label" : "SRC Quotes with Parent Product",
+        "type" : "LOAD_DATASET",
+        "top" : 812.6,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform 1",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 252,
+        "graph" : {
+          "EDIT_ATTRIBUTES17" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES18" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES19" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES17",
+          "target" : "EDIT_ATTRIBUTES18"
+        }, {
+          "source" : "EDIT_ATTRIBUTES18",
+          "target" : "EDIT_ATTRIBUTES19"
+        } ]
+      },
+      "OUTPUT1" : {
+        "label" : "Save Avg Time to Complete Manual Task",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 392
+      },
+      "TRANSFORM2" : {
+        "label" : "Transform 2",
+        "type" : "TRANSFORM",
+        "top" : 532,
+        "left" : 252,
+        "graph" : {
+          "EDIT_ATTRIBUTES20" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES27" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES20",
+          "target" : "EDIT_ATTRIBUTES27"
+        } ]
+      },
+      "OUTPUT2" : {
+        "label" : "Save Orchestration Item Sequence",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 532,
+        "left" : 392
+      },
+      "TRANSFORM3" : {
+        "label" : "Transform 3",
+        "type" : "TRANSFORM",
+        "top" : 672,
+        "left" : 252,
+        "graph" : {
+          "EDIT_ATTRIBUTES22" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES23" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES24" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES25" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES26" : {
+            "label" : "Edit Attributes"
+          },
+          "FORMULA4" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Calculate Elapsed Days"
+          },
+          "FORMULA5" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Calculate Aux Created Date"
+          },
+          "DROP_FIELDS2" : {
+            "label" : "Drop Dates"
+          },
+          "FORMULA6" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Timeshift Dates"
+          },
+          "FORMULA7" : {
+            "parameters" : {
+              "type" : "DATE_NOW_UI"
+            },
+            "label" : "Calculate Last Processed Date"
+          },
+          "DROP_FIELDS3" : {
+            "label" : "Drop Aux Fields"
+          }
+        },
+        "connectors" : [ {
+          "source" : "EDIT_ATTRIBUTES22",
+          "target" : "EDIT_ATTRIBUTES23"
+        }, {
+          "source" : "EDIT_ATTRIBUTES23",
+          "target" : "EDIT_ATTRIBUTES24"
+        }, {
+          "source" : "EDIT_ATTRIBUTES24",
+          "target" : "EDIT_ATTRIBUTES25"
+        }, {
+          "source" : "EDIT_ATTRIBUTES25",
+          "target" : "EDIT_ATTRIBUTES26"
+        }, {
+          "source" : "EDIT_ATTRIBUTES26",
+          "target" : "FORMULA4"
+        }, {
+          "source" : "FORMULA4",
+          "target" : "FORMULA5"
+        }, {
+          "source" : "FORMULA5",
+          "target" : "DROP_FIELDS2"
+        }, {
+          "source" : "DROP_FIELDS2",
+          "target" : "FORMULA6"
+        }, {
+          "source" : "FORMULA6",
+          "target" : "FORMULA7"
+        }, {
+          "source" : "FORMULA7",
+          "target" : "DROP_FIELDS3"
+        } ]
+      },
+      "TRANSFORM4" : {
+        "label" : "Transform 4",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 252,
+        "graph" : {
+          "EDIT_ATTRIBUTES21" : {
+            "label" : "Edit Attributes"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT3" : {
+        "label" : "Save SOM Data",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 392,
+        "left" : 392
+      },
+      "OUTPUT4" : {
+        "label" : "Save Quotes with Parent Product",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 672,
+        "left" : 392
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "OUTPUT1"
+    }, {
+      "source" : "LOAD_DATASET3",
+      "target" : "TRANSFORM2"
+    }, {
+      "source" : "TRANSFORM2",
+      "target" : "OUTPUT2"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "TRANSFORM3"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "TRANSFORM4"
+    }, {
+      "source" : "TRANSFORM4",
+      "target" : "OUTPUT3"
+    }, {
+      "source" : "TRANSFORM3",
+      "target" : "OUTPUT4"
+    } ],
+    "hiddenColumns" : [ ],
+    "assetType" : "TCRM"
+  }
+}

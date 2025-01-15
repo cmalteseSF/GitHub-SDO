@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnimationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <animationFrequency>often</animationFrequency>
+    <developerName>COM_SMB_Lead_Path</developerName>
+    <isActive>true</isActive>
+    <masterLabel>COM - SMB - Lead Path</masterLabel>
+    <recordTypeContext>Custom</recordTypeContext>
+    <recordTypeName>COM_B2B_Sales_Lead</recordTypeName>
+    <sobjectType>Lead</sobjectType>
+    <targetField>Status</targetField>
+    <targetFieldChangeToValues>Qualified,Converted</targetFieldChangeToValues>
+</AnimationRule>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>COM_B2B_Seller_Experience</folder>
+    <masterLabel>*COM B2B - Seller Experience</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>coms4maltese@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+</WaveApplication>

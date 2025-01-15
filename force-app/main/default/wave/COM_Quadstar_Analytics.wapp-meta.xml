@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>COM_Quadstar_Analytics</folder>
+    <masterLabel>COM - Quadstar B2B Analytics</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>coms4maltese@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+</WaveApplication>

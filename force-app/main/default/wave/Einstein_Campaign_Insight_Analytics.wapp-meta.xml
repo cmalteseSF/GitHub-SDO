@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>Einstein_Campaign_Insight_Analytics</folder>
+    <masterLabel>Einstein Behavior Scoring</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>sdo_hp.ybyfzgtzsc7y.jnur2w8uqlov@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+</WaveApplication>

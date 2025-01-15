@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveRecipe xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <content xsi:nil="true"/>
+    <dataflow>Demo_OT_for_Comms_Fields_Dot_Notation_Recovery</dataflow>
+    <format>R3</format>
+    <masterLabel>Demo | OT for Comms - Fields Dot Notation Recovery</masterLabel>
+</WaveRecipe>

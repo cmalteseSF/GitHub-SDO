@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataset xmlns="http://soap.sforce.com/2006/04/metadata">
+    <application>COM_B2B_Analytics_for_Comms_Cloud</application>
+    <masterLabel>Opportunity_FOR_DEMO1</masterLabel>
+    <templateAssetSourceName>Opportunity_FOR_DEMO1</templateAssetSourceName>
+    <type>default</type>
+</WaveDataset>

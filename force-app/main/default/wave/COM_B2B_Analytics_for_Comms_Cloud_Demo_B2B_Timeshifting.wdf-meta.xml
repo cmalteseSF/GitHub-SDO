@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDataflow xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <content xsi:nil="true"/>
+    <application>COM_B2B_Analytics_for_Comms_Cloud</application>
+    <dataflowType>User</dataflowType>
+    <description>Demo | B2B - Timeshifting</description>
+    <masterLabel>COM - B2B Analytics for Comms Cloud Demo | B2B - Timeshifting</masterLabel>
+</WaveDataflow>

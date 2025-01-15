@@ -1,0 +1,11 @@
+projectPath: ./vlocity-temp
+expansionPath: ./vlocity-temp
+queries:
+  - VlocityDataPackType: OmniScript
+  - VlocityDataPackType: IntegrationProcedure
+  - VlocityDataPackType: DataRaptor
+  - VlocityDataPackType: FlexCard
+  - VlocityDataPackType: CalculationMatrix
+  - VlocityDataPackType: CalculationProcedure
+  - VlocityDataPackType: Product2
+  - VlocityDataPackType: PricebookEntry

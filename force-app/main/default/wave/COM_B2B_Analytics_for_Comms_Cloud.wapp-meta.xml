@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetIcon>/analytics/wave/web/proto/images/app/icons/16.png</assetIcon>
+    <folder>COM_B2B_Analytics_for_Comms_Cloud</folder>
+    <masterLabel>COMXP - B2B Analytics for Comms Cloud</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>coms4maltese@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>Demo_B2B_Comms_Analytics_232</templateOrigin>
+    <templateVersion>1.0</templateVersion>
+</WaveApplication>

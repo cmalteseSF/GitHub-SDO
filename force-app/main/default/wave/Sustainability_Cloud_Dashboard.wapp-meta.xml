@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetIcon>/analytics/wave/web/proto/images/app/icons/16.png</assetIcon>
+    <folder>Sustainability_Cloud_Dashboard</folder>
+    <masterLabel>Sustainability Cloud Dashboard</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>coms4maltese@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+    <templateOrigin>sustain_app__Sustainability</templateOrigin>
+    <templateVersion>1.17</templateVersion>
+</WaveApplication>

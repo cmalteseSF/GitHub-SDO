@@ -1,0 +1,195 @@
+{
+  "version" : "56.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Subscriber_External_Id", "Interaction_Date", "Case_Number", "Reason", "Process_Name", "Tenure", "Subscriber_Phone", "NBO", "Subscriber_Name", "Case_External_Id", "LastProcessedDate", "TrendingDown", "Subscriber_Id", "Outcome", "TrendingUp", "AHT", "Payment_Frequency", "Last_30_Days_Usage_Trend", "Interaction_Duration_Sec", "Payment_Frequency_Trend", "Last_30_Days_Spend_Trend", "Customer_Interactions_Count", "Last_30_Days_Usage", "Last_30_Days_Spend", "Churn_Score" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "B2C Churn Demo",
+          "name" : "B2C_Churn_Demo"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "REPLACE0" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET0" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Subscriber_Name_replace",
+          "newProperties" : {
+            "name" : "Subscriber_Name"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Subscriber_Name" ]
+        }
+      },
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Subscriber_Name_replace",
+          "label" : "Subscriber_Name",
+          "formulaExpression" : "replace(Subscriber_Name, 'Churn Other', 'Adam Reed')",
+          "precision" : 255
+        } ]
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "REPLACE0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "B2C Churn Demo",
+          "name" : "B2C_Churn_Demo",
+          "folderName" : "Demo_B2C_Churn"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Account_Name", "Subscription_ID", "Account_ID", "Request_supervisor", "Problem_with_add_on_creation", "Problem_with_IMEI", "CLV", "Problem_with_service_consumption_details", "Problem_with_service_restoration", "Problem_with_change_of_SIM", "Tenure_Months", "Problem_with_change_to_retention_plan", "Request_for_adjustments", "Payment_Frequency_Trend", "Topup_Amount_Trend", "Data_Usage_Trend", "Problem_with_mobile_configuration", "Problem_with_SMS", "Problem_with_suspensions", "Problem_with_voice", "Problem_with_bill_adjustment_and_refunds", "Problem_with_top_up_creation", "Problem_with_delivery", "Problem_with_data", "Problem_with_change_of_mobile_phone" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "B2C Churn Demo Predictors",
+          "name" : "B2C_Churn_Demo_Predictors"
+        },
+        "sampleDetails" : {
+          "type" : "TopN"
+        }
+      }
+    },
+    "REPLACE1" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET1" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Account_Name_replace",
+          "newProperties" : {
+            "name" : "Account_Name"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Account_Name" ]
+        }
+      },
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Account_Name_replace",
+          "label" : "Account Name",
+          "formulaExpression" : "replace(Account_Name, 'Adriana Mcknight', 'Adriana McKnight')",
+          "precision" : 255
+        } ]
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "REPLACE1" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "B2C Churn Demo Predictors",
+          "name" : "B2C_Churn_Demo_Predictors",
+          "folderName" : "Demo_B2C_Churn"
+        }
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "B2C Churn Demo",
+        "type" : "LOAD_DATASET",
+        "top" : 112,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform 0",
+        "type" : "TRANSFORM",
+        "top" : 112,
+        "left" : 252,
+        "graph" : {
+          "REPLACE0" : {
+            "parameters" : {
+              "type" : "REPLACE_UI"
+            },
+            "label" : "Replace"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT0" : {
+        "label" : "Output 0",
+        "type" : "OUTPUT",
+        "top" : 112,
+        "left" : 392
+      },
+      "LOAD_DATASET1" : {
+        "label" : "B2C Churn Demo Predictors",
+        "type" : "LOAD_DATASET",
+        "top" : 252,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform 1",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 252,
+        "graph" : {
+          "REPLACE1" : {
+            "parameters" : {
+              "type" : "REPLACE_UI"
+            },
+            "label" : "Replace"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "OUTPUT1" : {
+        "label" : "Output 1",
+        "type" : "OUTPUT",
+        "top" : 252,
+        "left" : 392
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET0",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "OUTPUT1"
+    } ],
+    "hiddenColumns" : [ ]
+  }
+}

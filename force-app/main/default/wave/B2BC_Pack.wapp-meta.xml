@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <folder>B2BC_Pack</folder>
+    <masterLabel>B2BC Pack</masterLabel>
+    <shares>
+        <accessLevel>Manage</accessLevel>
+        <sharedTo>guest_adm.totwupwckcwl@cmaltese-coms-2025.demo</sharedTo>
+        <sharedToType>User</sharedToType>
+    </shares>
+</WaveApplication>

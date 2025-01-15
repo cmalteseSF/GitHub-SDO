@@ -1,0 +1,4449 @@
+{
+  "version" : "59.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "vlocity_cmt__ParentItemId__c", "Id", "IsDeleted", "LineNumber", "CreatedDate", "LastModifiedDate", "QuoteId", "PricebookEntryId", "OpportunityLineItemId", "Quantity", "UnitPrice", "Discount", "HasRevenueSchedule", "HasQuantitySchedule", "Description", "ServiceDate", "Product2Id", "SortOrder", "HasSchedule", "ListPrice", "Subtotal", "TotalPrice", "vlocity_cmt__ConnectDate__c", "vlocity_cmt__QuoteMemberId__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "QuoteLineItem",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "QuoteLineItem"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Username", "LastName", "FirstName", "Name", "CompanyName", "Division", "Department", "Title", "Street", "City", "State", "PostalCode", "Country", "Email", "Phone", "MobilePhone", "Alias", "CommunityNickname", "IsActive", "TimeZoneSidKey", "UserRoleId", "ReceivesInfoEmails", "UserType", "FullPhotoUrl", "MediumPhotoUrl" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "User",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "User"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "ProductCode", "Description", "QuantityScheduleType", "QuantityInstallmentPeriod", "NumberOfQuantityInstallments", "RevenueScheduleType", "RevenueInstallmentPeriod", "NumberOfRevenueInstallments", "IsActive", "CreatedDate", "LastModifiedDate", "Family", "RecordTypeId", "ExternalDataSourceId", "ExternalId", "DisplayUrl", "QuantityUnitOfMeasure", "StockKeepingUnit" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Product2",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Product2"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET3" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "IsDeleted", "AccountId", "RecordTypeId", "Name", "Description", "StageName", "Amount", "Probability", "CloseDate", "Type", "NextStep", "LeadSource", "IsClosed", "IsWon", "ForecastCategory", "ForecastCategoryName", "CampaignId", "HasOpportunityLineItem", "Pricebook2Id", "OwnerId", "CreatedDate", "LastModifiedDate", "LastActivityDate", "FiscalQuarter", "FiscalYear", "Fiscal", "ContactId", "SyncedQuoteId", "HasOpenActivity", "HasOverdueTask" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Opportunity",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Opportunity"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET4" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "vlocity_cmt__RequestedCompletionDate__c", "vlocity_cmt__EffectiveRecurringTotal__c", "vlocity_cmt__EffectiveOneTimeTotal__c", "Id", "Product2Id", "IsDeleted", "OrderId", "PricebookEntryId", "OriginalOrderItemId", "AvailableQuantity", "Quantity", "UnitPrice", "ListPrice", "TotalPrice", "ServiceDate", "EndDate", "Description", "CreatedDate", "LastModifiedDate", "OrderItemNumber" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "OrderItem",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "OrderItem"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET6" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "BillingState", "ShippingState", "vlocity_cmt__Status__c", "Id", "MasterRecordId", "Name", "Type", "RecordTypeId", "ParentId", "BillingStreet", "BillingCity", "BillingPostalCode", "BillingCountry", "ShippingStreet", "ShippingCity", "ShippingPostalCode", "ShippingCountry", "Phone", "PhotoUrl", "Industry", "AnnualRevenue", "NumberOfEmployees", "Description", "OwnerId", "CreatedDate", "LastModifiedDate", "LastActivityDate", "LastViewedDate", "Jigsaw", "JigsawCompanyId", "AccountSource", "vlocity_cmt__BillCycle__c", "vlocity_cmt__BillFrequency__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Account",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Account"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET7" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "vlocity_cmt__DueDate__c", "Id", "OwnerId", "ContractId", "AccountId", "Pricebook2Id", "OriginalOrderId", "RecordTypeId", "EffectiveDate", "EndDate", "IsReductionOrder", "Status", "Description", "CustomerAuthorizedById", "CompanyAuthorizedById", "Type", "BillingStreet", "BillingCity", "BillingState", "BillingPostalCode", "BillingCountry", "ShippingStreet", "ShippingCity", "ShippingState", "ShippingPostalCode", "ShippingCountry", "ActivatedDate", "ActivatedById", "StatusCode", "OrderNumber", "TotalAmount", "CreatedDate", "LastModifiedDate", "IsDeleted", "SystemModstamp", "LastViewedDate", "vlocity_cmt__EffectiveOrderTotal__c", "vlocity_cmt__FirstVersionOrderIdentifier__c", "vlocity_cmt__OrderStatus__c", "vlocity_cmt__ParentOrderId__c", "vlocity_cmt__QuoteId__c", "vlocity_cmt__SubmittedToOmDate__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Order",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Order"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET9" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "OwnerId", "IsDeleted", "Name", "RecordTypeId", "CreatedDate", "LastModifiedDate", "OpportunityId", "Pricebook2Id", "ContactId", "QuoteNumber", "IsSyncing", "ShippingHandling", "Tax", "Status", "ExpirationDate", "Description", "Subtotal", "TotalPrice", "LineItemCount", "BillingStreet", "BillingCity", "BillingState", "BillingPostalCode", "BillingCountry", "ShippingStreet", "ShippingCity", "ShippingState", "ShippingPostalCode", "ShippingCountry", "QuoteToStreet", "QuoteToCity", "QuoteToState", "QuoteToPostalCode", "QuoteToCountry", "BillingName", "ShippingName", "QuoteToName", "Email", "Phone", "Fax", "ContractId", "AccountId", "Discount", "GrandTotal", "CanCreateQuoteLineItems", "vlocity_cmt__QuoteMarginTotal__c", "vlocity_cmt__EffectiveQuoteTotal__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Quote",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Quote"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET10" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "ParentRoleId", "ForecastUserId", "DeveloperName", "PortalAccountId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "UserRole",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "UserRole"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FLATTEN0" : {
+      "action" : "flatten",
+      "sources" : [ "LOAD_DATASET10" ],
+      "parameters" : {
+        "selfField" : "Id",
+        "parentField" : "ParentRoleId",
+        "multiField" : {
+          "name" : "Id_flatten_multiField",
+          "label" : "Roles",
+          "isSystemField" : false
+        },
+        "pathField" : {
+          "name" : "Id_flatten",
+          "label" : "RolePath",
+          "isSystemField" : false
+        },
+        "includeSelfId" : false
+      }
+    },
+    "FLATTEN1" : {
+      "action" : "flatten",
+      "sources" : [ "JOIN35" ],
+      "parameters" : {
+        "selfField" : "DeveloperName",
+        "parentField" : "ParentRole.DeveloperName",
+        "multiField" : {
+          "name" : "DeveloperName_flatten_multiField",
+          "label" : "RoleNames",
+          "isSystemField" : false
+        },
+        "pathField" : {
+          "name" : "DeveloperName_flatten",
+          "label" : "RoleNamesPath",
+          "isSystemField" : false
+        },
+        "includeSelfId" : true
+      }
+    },
+    "FLATTEN2" : {
+      "action" : "flatten",
+      "sources" : [ "FLATTEN1" ],
+      "parameters" : {
+        "selfField" : "DeveloperName",
+        "parentField" : "ParentRole.DeveloperName",
+        "multiField" : {
+          "name" : "DeveloperName_flatten1_multiField",
+          "label" : "Hierarchy_RoleNames",
+          "isSystemField" : false
+        },
+        "pathField" : {
+          "name" : "DeveloperName_flatten1",
+          "label" : "Hierarchy_RoleNamesPath",
+          "isSystemField" : false
+        },
+        "includeSelfId" : true
+      }
+    },
+    "FORMULA0" : {
+      "action" : "computeRelative",
+      "sources" : [ "FILTER43" ],
+      "parameters" : {
+        "partitionBy" : [ "Name" ],
+        "orderBy" : [ {
+          "fieldName" : "Id",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Id_formula",
+          "label" : "isDuplicate",
+          "formulaExpression" : "lead(Id)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA1" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Id_formula1",
+          "label" : "UniqueUserName",
+          "formulaExpression" : "case \n\twhen Id_formula is null\n\tthen Name\n\telse\n\tconcat(Name,' (',Username,')')\nend",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN2" : {
+      "action" : "join",
+      "sources" : [ "FORMULA1", "FLATTEN2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Role.Id", "Role.DeveloperName_flatten1" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "UserRoleId" ],
+        "rightQualifier" : "Role",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER0" : {
+      "action" : "filter",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "JOIN17" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Opportunity",
+          "name" : "Demo_ESM_246_Opportunity",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET13" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "OpportunityId", "SortOrder", "PricebookEntryId", "Product2Id", "ProductCode", "Name", "Quantity", "TotalPrice", "UnitPrice", "ListPrice", "ServiceDate", "HasQuantitySchedule", "Description", "HasSchedule", "CreatedDate", "LastModifiedDate" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "OpportunityLineItem",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "OpportunityLineItem"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "REPLACE0" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET9" ],
+      "schema" : {
+        "fields" : [ {
+          "name" : "Status_replace",
+          "newProperties" : {
+            "name" : "Status"
+          }
+        } ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Status" ]
+        }
+      },
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Status_replace",
+          "label" : "Status",
+          "formulaExpression" : "coalesce(Status, null, 'Draft')"
+        } ]
+      }
+    },
+    "FORMULA4" : {
+      "action" : "formula",
+      "sources" : [ "REPLACE0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Id_formula",
+          "label" : "DaysToQuote",
+          "formulaExpression" : "case \n\twhen Status in ('Draft')\n\tthen \n\tdatediff(current_date(), CreatedDate)\nend",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA5" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA4" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Id_formula1",
+          "label" : "DaysSincePresented",
+          "formulaExpression" : "case \n\twhen Status in ('Presented')\n\tthen datediff(now(), LastModifiedDate)\nend\n",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN4" : {
+      "action" : "join",
+      "sources" : [ "FORMULA5", "JOIN8" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Account.Id" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "AccountId" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "BUCKET8" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Quote",
+          "name" : "Demo_Quote",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "JOIN5" : {
+      "action" : "join",
+      "sources" : [ "JOIN10", "FILTER0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Owner.CompanyName", "Owner.Division", "Owner.Department", "Owner.Title", "Owner.Street", "Owner.City", "Owner.State", "Owner.PostalCode", "Owner.Country", "Owner.Phone", "Owner.MobilePhone", "Owner.Alias", "Owner.CommunityNickname", "Owner.IsActive", "Owner.TimeZoneSidKey", "Owner.ReceivesInfoEmails", "Owner.UserType" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OwnerId" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER4" : {
+      "action" : "filter",
+      "sources" : [ "JOIN5" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN6" : {
+      "action" : "join",
+      "sources" : [ "JOIN11", "FILTER4" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Opportunity.Id", "Opportunity.Description" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OpportunityId" ],
+        "rightQualifier" : "Opportunity",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "OUTPUT3" : {
+      "action" : "save",
+      "sources" : [ "JOIN6" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Oppty Products",
+          "name" : "Demo_ESM_246_OpportunityProduct",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "OUTPUT6" : {
+      "action" : "save",
+      "sources" : [ "FORMULA43" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order",
+          "name" : "Demo_ESM_246_Order",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "OUTPUT7" : {
+      "action" : "save",
+      "sources" : [ "JOIN39" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Order Item",
+          "name" : "Demo_ESM_246_OrderItem",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "FILTER6" : {
+      "action" : "filter",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN8" : {
+      "action" : "join",
+      "sources" : [ "JOIN27", "FILTER6" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Owner.Id", "Owner.CompanyName", "Owner.Division", "Owner.Department", "Owner.Title", "Owner.Street", "Owner.City", "Owner.State", "Owner.PostalCode", "Owner.Country", "Owner.Phone", "Owner.MobilePhone", "Owner.Alias", "Owner.CommunityNickname", "Owner.IsActive", "Owner.TimeZoneSidKey", "Owner.ReceivesInfoEmails", "Owner.UserType" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OwnerId" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "LOAD_DATASET14" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "MasterLabel", "ApiName", "IsActive", "SortOrder", "IsClosed", "IsWon", "ForecastCategory", "ForecastCategoryName", "DefaultProbability", "Description", "CreatedDate" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "OpportunityStage",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "OpportunityStage"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN9" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET3", "LOAD_DATASET14" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "OpportunityStage.Id", "OpportunityStage.MasterLabel", "OpportunityStage.ApiName", "OpportunityStage.IsActive", "OpportunityStage.ForecastCategory", "OpportunityStage.ForecastCategoryName", "OpportunityStage.Description", "OpportunityStage.CreatedDate" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "StageName" ],
+        "rightQualifier" : "OpportunityStage",
+        "rightKeys" : [ "MasterLabel" ]
+      }
+    },
+    "FILTER7" : {
+      "action" : "filter",
+      "sources" : [ "JOIN8" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN10" : {
+      "action" : "join",
+      "sources" : [ "JOIN9", "FILTER7" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Account.Id" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "AccountId" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER9" : {
+      "action" : "filter",
+      "sources" : [ "JOIN5" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "FILTER10" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET2" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN11" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET13", "FILTER10" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Product.Id", "Product.ProductCode", "Product.Description", "Product.QuantityScheduleType", "Product.QuantityInstallmentPeriod", "Product.NumberOfQuantityInstallments", "Product.RevenueScheduleType", "Product.RevenueInstallmentPeriod", "Product.NumberOfRevenueInstallments", "Product.IsActive", "Product.CreatedDate", "Product.LastModifiedDate", "Product.RecordTypeId", "Product.ExternalDataSourceId", "Product.ExternalId", "Product.DisplayUrl", "Product.QuantityUnitOfMeasure", "Product.StockKeepingUnit" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "Product2Id" ],
+        "rightQualifier" : "Product",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER13" : {
+      "action" : "filter",
+      "sources" : [ "JOIN8" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "FILTER14" : {
+      "action" : "filter",
+      "sources" : [ "JOIN5" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN14" : {
+      "action" : "join",
+      "sources" : [ "FILTER13", "FILTER14" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Opportunity.IsDeleted", "Opportunity.AccountId", "Opportunity.RecordTypeId", "Opportunity.Description", "Opportunity.StageName", "Opportunity.Amount", "Opportunity.Probability", "Opportunity.CloseDate", "Opportunity.Type", "Opportunity.NextStep", "Opportunity.LeadSource", "Opportunity.IsClosed", "Opportunity.IsWon", "Opportunity.ForecastCategory", "Opportunity.ForecastCategoryName", "Opportunity.CampaignId", "Opportunity.HasOpportunityLineItem", "Opportunity.Pricebook2Id", "Opportunity.OwnerId", "Opportunity.CreatedDate", "Opportunity.LastModifiedDate", "Opportunity.LastActivityDate", "Opportunity.FiscalQuarter", "Opportunity.FiscalYear", "Opportunity.Fiscal", "Opportunity.ContactId", "Opportunity.SyncedQuoteId", "Opportunity.HasOpenActivity", "Opportunity.HasOverdueTask", "Opportunity.OpportunityStage.SortOrder", "Opportunity.OpportunityStage.IsClosed", "Opportunity.OpportunityStage.IsWon", "Opportunity.OpportunityStage.DefaultProbability", "Opportunity.Account.MasterRecordId", "Opportunity.Account.Name", "Opportunity.Account.Type", "Opportunity.Account.RecordTypeId", "Opportunity.Account.ParentId", "Opportunity.Account.BillingCity", "Opportunity.Account.BillingState", "Opportunity.Account.BillingPostalCode", "Opportunity.Account.BillingCountry", "Opportunity.Account.ShippingCity", "Opportunity.Account.ShippingState", "Opportunity.Account.ShippingPostalCode", "Opportunity.Account.ShippingCountry", "Opportunity.Account.Phone", "Opportunity.Account.PhotoUrl", "Opportunity.Account.Industry", "Opportunity.Account.AnnualRevenue", "Opportunity.Account.Description", "Opportunity.Account.OwnerId", "Opportunity.Account.CreatedDate", "Opportunity.Account.LastModifiedDate", "Opportunity.Account.LastActivityDate", "Opportunity.Account.LastViewedDate", "Opportunity.Account.AccountSource", "Opportunity.Account.Owner.Username", "Opportunity.Account.Owner.LastName", "Opportunity.Account.Owner.FirstName", "Opportunity.Account.Owner.Name", "Opportunity.Account.Owner.Email", "Opportunity.Account.Owner.UserRoleId", "Opportunity.Account.Owner.FullPhotoUrl", "Opportunity.Account.Owner.MediumPhotoUrl", "Opportunity.Account.Owner.Id_formula1", "Opportunity.Account.Owner.Role.Name", "Opportunity.Account.Owner.Role.ParentRoleId", "Opportunity.Account.Owner.Role.DeveloperName", "Opportunity.Account.Owner.Role.Id_flatten", "Opportunity.Account.Owner.Role.Id_flatten_multiField", "Opportunity.Account.Owner.Role.ParentRole.Name", "Opportunity.Account.Owner.Role.ParentRole.ParentRoleId", "Opportunity.Account.Owner.Role.ParentRole.DeveloperName", "Opportunity.Account.Owner.Role.DeveloperName_flatten", "Opportunity.Account.Owner.Role.DeveloperName_flatten_multiField", "Opportunity.Account.Owner.Role.DeveloperName_flatten1_multiField", "Opportunity.Owner.Id", "Opportunity.Owner.Username", "Opportunity.Owner.LastName", "Opportunity.Owner.FirstName", "Opportunity.Owner.Email", "Opportunity.Owner.UserRoleId", "Opportunity.Owner.FullPhotoUrl", "Opportunity.Owner.MediumPhotoUrl", "Opportunity.Owner.Id_formula1", "Opportunity.Owner.Role.Name", "Opportunity.Owner.Role.ParentRoleId", "Opportunity.Owner.Role.DeveloperName", "Opportunity.Owner.Role.Id_flatten", "Opportunity.Owner.Role.Id_flatten_multiField", "Opportunity.Owner.Role.ParentRole.Name", "Opportunity.Owner.Role.ParentRole.ParentRoleId", "Opportunity.Owner.Role.ParentRole.DeveloperName", "Opportunity.Owner.Role.DeveloperName_flatten", "Opportunity.Owner.Role.DeveloperName_flatten_multiField", "Opportunity.Owner.Role.DeveloperName_flatten1_multiField" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "MULTI_VALUE_LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "Opportunity",
+        "rightKeys" : [ "AccountId" ]
+      }
+    },
+    "FORMULA3" : {
+      "action" : "formula",
+      "sources" : [ "JOIN14" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Id_formula",
+          "label" : "hasOpportunity",
+          "formulaExpression" : "case \n\twhen 'Name' is not null \n\tthen 'true'\n\telse 'false'\nend",
+          "precision" : 255,
+          "defaultValue" : "false"
+        } ]
+      }
+    },
+    "DROP_FIELDS0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA3" ],
+      "parameters" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Opportunity.Name", "Opportunity.Owner.Name" ]
+        }
+      }
+    },
+    "OUTPUT9" : {
+      "action" : "save",
+      "sources" : [ "DROP_FIELDS0" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Account",
+          "name" : "Demo_ESM_246_Account",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET15" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "CreatedDate", "CreatedById", "vlocity_cmt__OrchestrationPlanId__c", "vlocity_cmt__OrderFulfilmentRequest__c", "vlocity_cmt__OrderItemId__c", "vlocity_cmt__Priority__c", "vlocity_cmt__State__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "vlocity_cmt__OrchestrationItem__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "vlocity_cmt__OrchestrationItem__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "OUTPUT10" : {
+      "action" : "save",
+      "sources" : [ "JOIN31" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Orchestration Item",
+          "name" : "Demo_ESM_246_OrchestrationItem",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET16" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "OwnerId", "Name", "CreatedDate", "vlocity_cmt__AccountId__c", "vlocity_cmt__OrderId__c", "vlocity_cmt__State__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "vlocity_cmt__OrchestrationPlan__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "vlocity_cmt__OrchestrationPlan__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN15" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET15", "LOAD_DATASET16" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "OrchPlan.Id", "OrchPlan.Name", "OrchPlan.CreatedDate", "OrchPlan.vlocity_cmt__State__c" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "vlocity_cmt__OrchestrationPlanId__c" ],
+        "rightQualifier" : "OrchPlan",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER17" : {
+      "action" : "filter",
+      "sources" : [ "JOIN23" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN17" : {
+      "action" : "join",
+      "sources" : [ "FILTER9", "FILTER17" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "MULTI_VALUE_LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "Quote",
+        "rightKeys" : [ "OpportunityId" ]
+      }
+    },
+    "LOAD_DATASET17" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "StartDate", "OwnerName", "Username", "QuotaAmount" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Plain Quota",
+          "name" : "Demo_Plain_Quota"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FILTER18" : {
+      "action" : "filter",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN18" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET17", "FILTER18" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Owner.Name", "Owner.CompanyName", "Owner.Division", "Owner.Department", "Owner.Title", "Owner.Street", "Owner.City", "Owner.State", "Owner.PostalCode", "Owner.Country", "Owner.Email", "Owner.Phone", "Owner.MobilePhone", "Owner.Alias", "Owner.CommunityNickname", "Owner.TimeZoneSidKey", "Owner.ReceivesInfoEmails", "Owner.UserType" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "Username" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Username" ]
+      }
+    },
+    "OUTPUT11" : {
+      "action" : "save",
+      "sources" : [ "JOIN18" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Quota",
+          "name" : "Demo_ESM_246_Quota",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "FILTER19" : {
+      "action" : "filter",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "OUTPUT12" : {
+      "action" : "save",
+      "sources" : [ "FILTER19" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | User",
+          "name" : "Demo_ESM_246_User",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "FILTER20" : {
+      "action" : "filter",
+      "sources" : [ "JOIN25" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN19" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET4", "FILTER20" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Order.Id", "Order.ContractId", "Order.Pricebook2Id", "Order.OriginalOrderId", "Order.RecordTypeId", "Order.EffectiveDate", "Order.EndDate", "Order.IsReductionOrder", "Order.Description", "Order.CustomerAuthorizedById", "Order.CompanyAuthorizedById", "Order.Type", "Order.BillingStreet", "Order.BillingCity", "Order.BillingState", "Order.BillingPostalCode", "Order.BillingCountry", "Order.ShippingStreet", "Order.ShippingCity", "Order.ShippingState", "Order.ShippingPostalCode", "Order.ShippingCountry", "Order.ActivatedDate", "Order.ActivatedById", "Order.TotalAmount", "Order.IsDeleted", "Order.SystemModstamp", "Order.Account.Type", "Order.Account.RecordTypeId", "Order.Account.ParentId", "Order.Account.BillingStreet", "Order.Account.BillingCity", "Order.Account.BillingState", "Order.Account.BillingPostalCode", "Order.Account.BillingCountry", "Order.Account.ShippingStreet", "Order.Account.ShippingCity", "Order.Account.ShippingState", "Order.Account.ShippingPostalCode", "Order.Account.ShippingCountry", "Order.Account.PhotoUrl", "Order.Account.Industry", "Order.Account.AnnualRevenue", "Order.Account.NumberOfEmployees", "Order.Account.Description", "Order.Account.CreatedDate", "Order.Account.LastModifiedDate", "Order.Account.LastActivityDate", "Order.Account.LastViewedDate", "Order.Account.Jigsaw", "Order.Account.JigsawCompanyId", "Order.Account.AccountSource", "Order.Account.Owner.Username", "Order.Account.Owner.LastName", "Order.Account.Owner.FirstName", "Order.Account.Owner.Email", "Order.Account.Owner.UserRoleId", "Order.Account.Owner.FullPhotoUrl", "Order.Account.Owner.MediumPhotoUrl", "Order.Account.Owner.Role.ParentRoleId", "Order.Account.Owner.Role.DeveloperName", "Order.Account.Owner.Role.ParentRole.Name", "Order.Account.Owner.Role.ParentRole.ParentRoleId", "Order.Account.Owner.Role.ParentRole.DeveloperName", "Order.Account.Owner.Role.DeveloperName_flatten", "Order.Account.Owner.Role.DeveloperName_flatten_multiField", "Order.Account.Owner.Role.DeveloperName_flatten1_multiField" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OrderId" ],
+        "rightQualifier" : "Order",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "LOAD_DATASET19" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "vlocity_cmt__BroadbandConnectionType__c", "Id", "Name", "CreatedDate", "LastModifiedDate", "vlocity_cmt__QuoteId__c", "vlocity_cmt__AsyncOperation__c", "vlocity_cmt__City__c", "vlocity_cmt__Country__c", "vlocity_cmt__Email__c", "vlocity_cmt__FirstName__c", "vlocity_cmt__LastName__c", "vlocity_cmt__LockedBy__c", "vlocity_cmt__LockedFor__c", "vlocity_cmt__MemberType__c", "vlocity_cmt__PostalCode__c", "vlocity_cmt__PremisesId__c", "vlocity_cmt__QuoteGroupId__c", "vlocity_cmt__ServiceAccountId__c", "vlocity_cmt__ServicePointId__c", "vlocity_cmt__ServiceabilityData__c", "vlocity_cmt__State__c", "vlocity_cmt__StreetAddress__c", "vlocity_cmt__Title__c", "vlocity_cmt__AddressValidationResult__c", "vlocity_cmt__MaxDownloadSpeed__c", "vlocity_cmt__MaxUploadSpeed__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "vlocity_cmt__QuoteMember__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "vlocity_cmt__QuoteMember__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FILTER22" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN23" : {
+      "action" : "join",
+      "sources" : [ "FILTER27", "FILTER22" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "QuoteLineItem.IsDeleted", "QuoteLineItem.QuoteId", "QuoteLineItem.Quantity", "QuoteLineItem.UnitPrice", "QuoteLineItem.Discount", "QuoteLineItem.HasRevenueSchedule", "QuoteLineItem.HasQuantitySchedule", "QuoteLineItem.Description", "QuoteLineItem.ServiceDate", "QuoteLineItem.SortOrder", "QuoteLineItem.HasSchedule", "QuoteLineItem.ListPrice", "QuoteLineItem.Subtotal", "QuoteLineItem.TotalPrice" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "MULTI_VALUE_LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "QuoteLineItem",
+        "rightKeys" : [ "QuoteId" ]
+      }
+    },
+    "FILTER24" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET19" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "OUTPUT13" : {
+      "action" : "save",
+      "sources" : [ "FORMULA42" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Quote Member",
+          "name" : "Demo_Quote_Member",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "FILTER27" : {
+      "action" : "filter",
+      "sources" : [ "JOIN4" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "FORMULA8" : {
+      "action" : "formula",
+      "sources" : [ "JOIN44" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Id_formula1",
+          "label" : "HoursToFulfill",
+          "formulaExpression" : "case \n\twhen vlocity_cmt__OrderStatus__c = 'Activated'\n\tthen (to_unix_timestamp(ActivatedDate) - to_unix_timestamp(vlocity_cmt__SubmittedToOmDate__c)) / 3600\n\telse\n\tnull\nend",
+          "precision" : 10,
+          "scale" : 3,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA9" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA8" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Id_formula1_formula",
+          "label" : "MinutesToFulfill",
+          "formulaExpression" : "case \n\twhen vlocity_cmt__OrderStatus__c = 'Activated'\n\tthen (to_unix_timestamp(ActivatedDate) - to_unix_timestamp(vlocity_cmt__SubmittedToOmDate__c)) / 60\n\telse\n\tnull\nend",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FILTER28" : {
+      "action" : "filter",
+      "sources" : [ "JOIN14" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN25" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET7", "FILTER28" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Account.Id", "Account.MasterRecordId", "Account.Opportunity.Id", "Account.Opportunity.Name", "Account.Opportunity.Account.BillingStreet", "Account.Opportunity.Account.ShippingStreet", "Account.Opportunity.Account.NumberOfEmployees", "Account.Opportunity.Account.Jigsaw", "Account.Opportunity.Account.JigsawCompanyId", "Account.Opportunity.Account.RecordType.Name", "Account.Opportunity.Owner.Name" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "AccountId" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER29" : {
+      "action" : "filter",
+      "sources" : [ "JOIN25" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "FILTER31" : {
+      "action" : "filter",
+      "sources" : [ "JOIN2" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN26" : {
+      "action" : "join",
+      "sources" : [ "FORMULA9", "FILTER31" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Owner.Id", "Owner.LastName", "Owner.FirstName", "Owner.CompanyName", "Owner.Division", "Owner.Department", "Owner.Title", "Owner.Street", "Owner.City", "Owner.State", "Owner.PostalCode", "Owner.Country", "Owner.Email", "Owner.Phone", "Owner.MobilePhone", "Owner.Alias", "Owner.CommunityNickname", "Owner.IsActive", "Owner.TimeZoneSidKey", "Owner.UserRoleId", "Owner.ReceivesInfoEmails", "Owner.UserType", "Owner.FullPhotoUrl", "Owner.MediumPhotoUrl", "Owner.Role.Name", "Owner.Role.ParentRoleId", "Owner.Role.DeveloperName", "Owner.Role.ParentRole.ParentRoleId", "Owner.Role.ParentRole.DeveloperName" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OwnerId" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "LOAD_DATASET20" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "DeveloperName", "SobjectType", "IsActive" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "RecordType",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "RecordType"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN27" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET6", "LOAD_DATASET20" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "RecordType.Id", "RecordType.DeveloperName", "RecordType.SobjectType", "RecordType.IsActive" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "RecordTypeId" ],
+        "rightQualifier" : "RecordType",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER32" : {
+      "action" : "filter",
+      "sources" : [ "JOIN27" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN28" : {
+      "action" : "join",
+      "sources" : [ "JOIN15", "FILTER32" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OrchPlan.vlocity_cmt__AccountId__c" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER33" : {
+      "action" : "filter",
+      "sources" : [ "JOIN23" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN29" : {
+      "action" : "join",
+      "sources" : [ "JOIN26", "FILTER33" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Quote.Id", "Quote.OwnerId", "Quote.IsDeleted", "Quote.Name", "Quote.RecordTypeId", "Quote.CreatedDate", "Quote.LastModifiedDate", "Quote.Pricebook2Id", "Quote.ContactId", "Quote.QuoteNumber", "Quote.IsSyncing", "Quote.ShippingHandling", "Quote.Tax", "Quote.ExpirationDate", "Quote.Description", "Quote.Subtotal", "Quote.TotalPrice", "Quote.LineItemCount", "Quote.BillingStreet", "Quote.BillingCity", "Quote.BillingState", "Quote.BillingPostalCode", "Quote.BillingCountry", "Quote.ShippingStreet", "Quote.ShippingCity", "Quote.ShippingState", "Quote.ShippingPostalCode", "Quote.ShippingCountry", "Quote.QuoteToStreet", "Quote.QuoteToCity", "Quote.QuoteToState", "Quote.QuoteToPostalCode", "Quote.QuoteToCountry", "Quote.BillingName", "Quote.ShippingName", "Quote.QuoteToName", "Quote.Email", "Quote.Phone", "Quote.Fax", "Quote.ContractId", "Quote.AccountId", "Quote.Discount", "Quote.GrandTotal", "Quote.CanCreateQuoteLineItems", "Quote.vlocity_cmt__QuoteMarginTotal__c", "Quote.vlocity_cmt__EffectiveQuoteTotal__c", "Quote.Status", "Quote.Id_formula", "Quote.Id_formula1", "Quote.Account.BillingStreet", "Quote.Account.BillingCity", "Quote.Account.BillingState", "Quote.Account.BillingPostalCode", "Quote.Account.BillingCountry", "Quote.Account.MasterRecordId", "Quote.Account.Name", "Quote.Account.Type", "Quote.Account.RecordTypeId", "Quote.Account.ParentId", "Quote.Account.ShippingStreet", "Quote.Account.ShippingCity", "Quote.Account.ShippingState", "Quote.Account.ShippingPostalCode", "Quote.Account.ShippingCountry", "Quote.Account.Phone", "Quote.Account.PhotoUrl", "Quote.Account.Industry", "Quote.Account.AnnualRevenue", "Quote.Account.NumberOfEmployees", "Quote.Account.Description", "Quote.Account.OwnerId", "Quote.Account.CreatedDate", "Quote.Account.LastModifiedDate", "Quote.Account.LastActivityDate", "Quote.Account.LastViewedDate", "Quote.Account.Jigsaw", "Quote.Account.JigsawCompanyId", "Quote.Account.AccountSource", "Quote.Account.RecordType.Name", "Quote.Account.Owner.Username", "Quote.Account.Owner.LastName", "Quote.Account.Owner.FirstName", "Quote.Account.Owner.Name", "Quote.Account.Owner.Email", "Quote.Account.Owner.UserRoleId", "Quote.Account.Owner.FullPhotoUrl", "Quote.Account.Owner.MediumPhotoUrl", "Quote.Account.Owner.Id_formula1", "Quote.Account.Owner.Role.Name", "Quote.Account.Owner.Role.ParentRoleId", "Quote.Account.Owner.Role.DeveloperName", "Quote.Account.Owner.Role.Id_flatten", "Quote.Account.Owner.Role.Id_flatten_multiField", "Quote.Account.Owner.Role.ParentRole.Name", "Quote.Account.Owner.Role.ParentRole.ParentRoleId", "Quote.Account.Owner.Role.ParentRole.DeveloperName", "Quote.Account.Owner.Role.DeveloperName_flatten", "Quote.Account.Owner.Role.DeveloperName_flatten_multiField", "Quote.Account.Owner.Role.DeveloperName_flatten1_multiField", "Quote.QuoteLineItem.Id", "Quote.QuoteLineItem.LineNumber", "Quote.QuoteLineItem.CreatedDate", "Quote.QuoteLineItem.LastModifiedDate", "Quote.QuoteLineItem.PricebookEntryId", "Quote.QuoteLineItem.OpportunityLineItemId" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "vlocity_cmt__QuoteId__c" ],
+        "rightQualifier" : "Quote",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER34" : {
+      "action" : "filter",
+      "sources" : [ "JOIN45" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN30" : {
+      "action" : "join",
+      "sources" : [ "JOIN28", "FILTER34" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Order.Account.RecordTypeId", "Order.Account.ParentId", "Order.Account.BillingStreet", "Order.Account.BillingCity", "Order.Account.BillingState", "Order.Account.BillingPostalCode", "Order.Account.BillingCountry", "Order.Account.ShippingStreet", "Order.Account.ShippingCity", "Order.Account.ShippingState", "Order.Account.ShippingPostalCode", "Order.Account.ShippingCountry", "Order.Account.Phone", "Order.Account.PhotoUrl", "Order.Account.Industry", "Order.Account.AnnualRevenue", "Order.Account.NumberOfEmployees", "Order.Account.Description", "Order.Account.OwnerId", "Order.Account.CreatedDate", "Order.Account.LastModifiedDate", "Order.Account.LastActivityDate", "Order.Account.LastViewedDate", "Order.Account.Jigsaw", "Order.Account.JigsawCompanyId", "Order.Account.AccountSource" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "OrchPlan.vlocity_cmt__OrderId__c" ],
+        "rightQualifier" : "Order",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER35" : {
+      "action" : "filter",
+      "sources" : [ "JOIN8" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN31" : {
+      "action" : "join",
+      "sources" : [ "JOIN30", "FILTER35" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "ParentAccount.Id", "ParentAccount.ParentId", "ParentAccount.BillingStreet", "ParentAccount.BillingCity", "ParentAccount.BillingState", "ParentAccount.BillingPostalCode", "ParentAccount.BillingCountry", "ParentAccount.ShippingStreet", "ParentAccount.ShippingCity", "ParentAccount.ShippingState", "ParentAccount.ShippingPostalCode", "ParentAccount.ShippingCountry", "ParentAccount.Phone", "ParentAccount.PhotoUrl", "ParentAccount.AnnualRevenue", "ParentAccount.NumberOfEmployees", "ParentAccount.CreatedDate", "ParentAccount.LastModifiedDate", "ParentAccount.LastActivityDate", "ParentAccount.LastViewedDate", "ParentAccount.Jigsaw", "ParentAccount.JigsawCompanyId", "ParentAccount.AccountSource", "ParentAccount.Owner.Name", "ParentAccount.Owner.FullPhotoUrl", "ParentAccount.Owner.MediumPhotoUrl", "ParentAccount.Owner.Role.ParentRoleId", "ParentAccount.Owner.Role.DeveloperName", "ParentAccount.Owner.Role.ParentRole.DeveloperName" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "Account.ParentId" ],
+        "rightQualifier" : "ParentAccount",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER36" : {
+      "action" : "filter",
+      "sources" : [ "JOIN26" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN32" : {
+      "action" : "join",
+      "sources" : [ "JOIN29", "FILTER36" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "ParentOrder.Id", "ParentOrder.ContractId", "ParentOrder.Pricebook2Id", "ParentOrder.OriginalOrderId", "ParentOrder.RecordTypeId", "ParentOrder.EffectiveDate", "ParentOrder.EndDate", "ParentOrder.IsReductionOrder", "ParentOrder.Status", "ParentOrder.Description", "ParentOrder.CustomerAuthorizedById", "ParentOrder.CompanyAuthorizedById", "ParentOrder.Type", "ParentOrder.BillingStreet", "ParentOrder.BillingCity", "ParentOrder.BillingState", "ParentOrder.BillingPostalCode", "ParentOrder.BillingCountry", "ParentOrder.ShippingStreet", "ParentOrder.ShippingCity", "ParentOrder.ShippingState", "ParentOrder.ShippingPostalCode", "ParentOrder.ShippingCountry", "ParentOrder.ActivatedDate", "ParentOrder.ActivatedById", "ParentOrder.StatusCode", "ParentOrder.TotalAmount", "ParentOrder.CreatedDate", "ParentOrder.LastModifiedDate", "ParentOrder.IsDeleted", "ParentOrder.SystemModstamp", "ParentOrder.LastViewedDate", "ParentOrder.vlocity_cmt__EffectiveOrderTotal__c", "ParentOrder.vlocity_cmt__QuoteId__c", "ParentOrder.vlocity_cmt__SubmittedToOmDate__c", "ParentOrder.Account.Type", "ParentOrder.Account.RecordTypeId", "ParentOrder.Account.BillingStreet", "ParentOrder.Account.BillingCity", "ParentOrder.Account.BillingState", "ParentOrder.Account.BillingPostalCode", "ParentOrder.Account.BillingCountry", "ParentOrder.Account.ShippingStreet", "ParentOrder.Account.ShippingCity", "ParentOrder.Account.ShippingState", "ParentOrder.Account.ShippingPostalCode", "ParentOrder.Account.ShippingCountry", "ParentOrder.Account.Phone", "ParentOrder.Account.PhotoUrl", "ParentOrder.Account.AnnualRevenue", "ParentOrder.Account.NumberOfEmployees", "ParentOrder.Account.Description", "ParentOrder.Account.CreatedDate", "ParentOrder.Account.LastModifiedDate", "ParentOrder.Account.LastActivityDate", "ParentOrder.Account.LastViewedDate", "ParentOrder.Account.Jigsaw", "ParentOrder.Account.JigsawCompanyId", "ParentOrder.Account.AccountSource", "ParentOrder.Account.Owner.LastName", "ParentOrder.Account.Owner.FirstName", "ParentOrder.Account.Owner.UserRoleId", "ParentOrder.Account.Owner.FullPhotoUrl", "ParentOrder.Account.Owner.MediumPhotoUrl", "ParentOrder.Account.Owner.Role.Name", "ParentOrder.Account.Owner.Role.ParentRoleId", "ParentOrder.Account.Owner.Role.DeveloperName", "ParentOrder.Account.Owner.Role.Id_flatten", "ParentOrder.Account.Owner.Role.Id_flatten_multiField", "ParentOrder.Account.Owner.Role.ParentRole.Name", "ParentOrder.Account.Owner.Role.ParentRole.ParentRoleId", "ParentOrder.Account.Owner.Role.ParentRole.DeveloperName", "ParentOrder.Account.Owner.Role.DeveloperName_flatten", "ParentOrder.Account.Owner.Role.DeveloperName_flatten_multiField", "ParentOrder.Account.Owner.Role.DeveloperName_flatten1_multiField", "ParentOrder.Id_formula1", "ParentOrder.Id_formula1_formula", "ParentOrder.Owner.Role.Id_flatten", "ParentOrder.Owner.Role.Id_flatten_multiField", "ParentOrder.Owner.Role.ParentRole.Name", "ParentOrder.Owner.Role.DeveloperName_flatten", "ParentOrder.Owner.Role.DeveloperName_flatten_multiField", "ParentOrder.Owner.Role.DeveloperName_flatten1_multiField" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "vlocity_cmt__ParentOrderId__c" ],
+        "rightQualifier" : "ParentOrder",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER39" : {
+      "action" : "filter",
+      "sources" : [ "JOIN4" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN33" : {
+      "action" : "join",
+      "sources" : [ "FILTER24", "FILTER39" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Quote.Id", "Quote.OwnerId", "Quote.IsDeleted", "Quote.RecordTypeId", "Quote.CreatedDate", "Quote.LastModifiedDate", "Quote.Pricebook2Id", "Quote.ContactId", "Quote.IsSyncing", "Quote.ShippingHandling", "Quote.Tax", "Quote.ExpirationDate", "Quote.Description", "Quote.Subtotal", "Quote.BillingStreet", "Quote.BillingCity", "Quote.BillingState", "Quote.BillingPostalCode", "Quote.BillingCountry", "Quote.ShippingStreet", "Quote.ShippingCity", "Quote.ShippingState", "Quote.ShippingPostalCode", "Quote.ShippingCountry", "Quote.QuoteToStreet", "Quote.QuoteToCity", "Quote.QuoteToState", "Quote.QuoteToPostalCode", "Quote.QuoteToCountry", "Quote.BillingName", "Quote.ShippingName", "Quote.QuoteToName", "Quote.Email", "Quote.Phone", "Quote.Fax", "Quote.ContractId", "Quote.CanCreateQuoteLineItems", "Quote.Id_formula", "Quote.Id_formula1", "Quote.Account.RecordTypeId", "Quote.Account.BillingStreet", "Quote.Account.BillingCity", "Quote.Account.BillingState", "Quote.Account.BillingPostalCode", "Quote.Account.BillingCountry", "Quote.Account.ShippingStreet", "Quote.Account.ShippingCity", "Quote.Account.ShippingState", "Quote.Account.ShippingPostalCode", "Quote.Account.ShippingCountry", "Quote.Account.Phone", "Quote.Account.PhotoUrl", "Quote.Account.Industry", "Quote.Account.AnnualRevenue", "Quote.Account.NumberOfEmployees", "Quote.Account.Description", "Quote.Account.OwnerId", "Quote.Account.CreatedDate", "Quote.Account.LastModifiedDate", "Quote.Account.LastActivityDate", "Quote.Account.LastViewedDate", "Quote.Account.Jigsaw", "Quote.Account.JigsawCompanyId", "Quote.Account.AccountSource", "Quote.Account.RecordType.Name", "Quote.Account.Owner.Username", "Quote.Account.Owner.LastName", "Quote.Account.Owner.FirstName", "Quote.Account.Owner.Email", "Quote.Account.Owner.UserRoleId", "Quote.Account.Owner.FullPhotoUrl", "Quote.Account.Owner.MediumPhotoUrl", "Quote.Account.Owner.Role.Name", "Quote.Account.Owner.Role.ParentRoleId", "Quote.Account.Owner.Role.DeveloperName", "Quote.Account.Owner.Role.Id_flatten", "Quote.Account.Owner.Role.Id_flatten_multiField", "Quote.Account.Owner.Role.ParentRole.Name", "Quote.Account.Owner.Role.ParentRole.ParentRoleId", "Quote.Account.Owner.Role.ParentRole.DeveloperName", "Quote.Account.Owner.Role.DeveloperName_flatten", "Quote.Account.Owner.Role.DeveloperName_flatten_multiField", "Quote.Account.Owner.Role.DeveloperName_flatten1_multiField" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "vlocity_cmt__QuoteId__c" ],
+        "rightQualifier" : "Quote",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER41" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET0" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN34" : {
+      "action" : "join",
+      "sources" : [ "JOIN33", "FILTER41" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "QuoteLineItem",
+        "rightKeys" : [ "vlocity_cmt__QuoteMemberId__c" ]
+      }
+    },
+    "FILTER42" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET10" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "Id",
+          "operator" : "IS_NOT_NULL",
+          "operands" : [ ]
+        } ]
+      }
+    },
+    "JOIN35" : {
+      "action" : "join",
+      "sources" : [ "FLATTEN0", "FILTER42" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "ParentRoleId" ],
+        "rightQualifier" : "ParentRole",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FILTER43" : {
+      "action" : "filter",
+      "sources" : [ "LOAD_DATASET1" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "IsActive",
+          "operator" : "EQUAL",
+          "operands" : [ "true" ]
+        } ]
+      }
+    },
+    "LOAD_DATASET21" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "CaseNumber", "Type", "Status", "Description", "CreatedDate", "vlocity_cmt__Reason__c", "AccountId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Case",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Case"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "OUTPUT14" : {
+      "action" : "save",
+      "sources" : [ "BUCKET9" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Case",
+          "name" : "Demo_ESM_246_Case",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET22" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "StartDate", "EndDate", "ContractTerm", "Status", "ContractNumber", "AccountId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Contract",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Contract"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN36" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET22", "FORMULA5" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "Quote",
+        "rightKeys" : [ "ContractId" ]
+      }
+    },
+    "OUTPUT15" : {
+      "action" : "save",
+      "sources" : [ "FORMULA22" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Contract",
+          "name" : "Demo_ESM_246_Contract_Quote",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET23" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Network_Status__c", "Id", "ContactId", "AccountId", "Product2Id", "Name", "UsageEndDate", "Status", "vlocity_cmt__ActivationDate__c", "vlocity_cmt__AssetReferenceId__c", "vlocity_cmt__BillingAccountId__c", "vlocity_cmt__DisconnectDate__c", "vlocity_cmt__OneTimeCharge__c", "vlocity_cmt__ProvisioningStatus__c", "vlocity_cmt__RecurringCharge__c", "vlocity_cmt__ServiceAccountId__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Asset",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Asset"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN37" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET23", "LOAD_DATASET6" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "AccountId" ],
+        "rightQualifier" : "Account",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "OUTPUT16" : {
+      "action" : "save",
+      "sources" : [ "EDIT_ATTRIBUTES2" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | Asset",
+          "name" : "Demo_ESM_246_Asset",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "JOIN39" : {
+      "action" : "join",
+      "sources" : [ "JOIN19", "FILTER10" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Product2Id" ],
+        "rightQualifier" : "Product",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN40" : {
+      "action" : "join",
+      "sources" : [ "JOIN37", "FILTER10" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Product2Id" ],
+        "rightQualifier" : "Product",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN41" : {
+      "action" : "join",
+      "sources" : [ "JOIN46", "FILTER10" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "QuoteLineItem.Product2Id" ],
+        "rightQualifier" : "Product",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FORMULA10" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET21" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "CreatedDate_formula",
+          "label" : "DaysSinceOpen",
+          "formulaExpression" : "datediff(now(), CreatedDate)",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES0" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA10" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "vlocity_cmt__Reason__c",
+          "newProperties" : {
+            "label" : "Reason",
+            "name" : "vlocity_cmt__Reason__c"
+          }
+        } ]
+      }
+    },
+    "BUCKET0" : {
+      "action" : "bucket",
+      "sources" : [ "EDIT_ATTRIBUTES0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Status_bucket",
+          "label" : "Status Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "Status",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Open",
+              "sourceValues" : [ "Escalated", "New", "On Hold" ]
+            }, {
+              "value" : "Closed",
+              "sourceValues" : [ "Closed" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET1" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Status_bucket1",
+          "label" : "Status Sort",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "isPassthroughEnabled" : true,
+            "sourceField" : {
+              "name" : "Status",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "1",
+              "sourceValues" : [ "New" ]
+            }, {
+              "value" : "2",
+              "sourceValues" : [ "On Hold" ]
+            }, {
+              "value" : "3",
+              "sourceValues" : [ "Escalated" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET9" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET1" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Status_bucket2",
+          "label" : "Status",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "Status",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Escalated",
+              "sourceValues" : [ "Escalated" ]
+            }, {
+              "value" : "New",
+              "sourceValues" : [ "New" ]
+            }, {
+              "value" : "On Hold",
+              "sourceValues" : [ "On Hold" ]
+            }, {
+              "value" : "Closed",
+              "sourceValues" : [ "Closed" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA11" : {
+      "action" : "formula",
+      "sources" : [ "JOIN23" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "LastModifiedDate_formula",
+          "label" : "DaysSinceOpen",
+          "formulaExpression" : "datediff(now(), LastModifiedDate)",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA30" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA11" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Status_Legend",
+          "label" : "Status Legend",
+          "formulaExpression" : "case when Status = 'Presented' then 'Pending Approval' \nwhen Status = 'In Review' then 'Internal Review'  else Status end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET7" : {
+      "action" : "bucket",
+      "sources" : [ "FORMULA30" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Status_Legend_bucket",
+          "label" : "Status Legend Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "Status_Legend",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Draft",
+              "sourceValues" : [ "Draft" ]
+            }, {
+              "value" : "Pending Approval",
+              "sourceValues" : [ "Pending Approval" ]
+            }, {
+              "value" : "Internal Review",
+              "sourceValues" : [ "Internal Review" ]
+            }, {
+              "value" : "Accepted",
+              "sourceValues" : [ "Accepted" ]
+            }, {
+              "value" : "Denied",
+              "sourceValues" : [ "Denied" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET8" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET7" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Status_bucket",
+          "label" : "Status Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "Status",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Draft",
+              "sourceValues" : [ "Draft" ]
+            }, {
+              "value" : "Pending Approval",
+              "sourceValues" : [ "Presented" ]
+            }, {
+              "value" : "Accepted",
+              "sourceValues" : [ "Accepted" ]
+            }, {
+              "value" : "Internal Review",
+              "sourceValues" : [ "Approved", "In Review", "Needs Review", "Rejected" ]
+            }, {
+              "value" : "Denied",
+              "sourceValues" : [ "Denied" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "LOAD_DATASET24" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "vlocity_cmt__QuoteMemberId__c", "vlocity_cmt__ServiceAccountId__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "vlocity_cmt__OrderMember__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "vlocity_cmt__OrderMember__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN42" : {
+      "action" : "join",
+      "sources" : [ "JOIN41", "LOAD_DATASET24" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "OrderMember",
+        "rightKeys" : [ "vlocity_cmt__QuoteMemberId__c" ]
+      }
+    },
+    "JOIN43" : {
+      "action" : "join",
+      "sources" : [ "JOIN40", "FILTER24" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "vlocity_cmt__ServiceAccountId__c" ],
+        "rightQualifier" : "QuoteMembe",
+        "rightKeys" : [ "vlocity_cmt__ServiceAccountId__c" ]
+      }
+    },
+    "JOIN44" : {
+      "action" : "join",
+      "sources" : [ "FILTER29", "LOAD_DATASET4" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "OrderItem",
+        "rightKeys" : [ "OrderId" ]
+      }
+    },
+    "JOIN45" : {
+      "action" : "join",
+      "sources" : [ "JOIN32", "FILTER10" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "OrderItem.Product2Id" ],
+        "rightQualifier" : "Product",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FORMULA13" : {
+      "action" : "formula",
+      "sources" : [ "JOIN36" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Months_StartDate_now",
+          "label" : "Months_StartDate_now",
+          "formulaExpression" : "months_between(now(), StartDate)",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA15" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA13" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Contract_Term_Remaining",
+          "label" : "Contract Term Remaining",
+          "formulaExpression" : "months_between(EndDate, StartDate) + ContractTerm",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA22" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA15" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Contract_Number_Status",
+          "label" : "Contract Number Status",
+          "formulaExpression" : "concat(ContractNumber,' - ',Status )",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA23" : {
+      "action" : "formula",
+      "sources" : [ "JOIN56" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATETIME",
+          "name" : "vlocity_cmt__ProvisioningStatus__c_formula",
+          "label" : "Now",
+          "formulaExpression" : "now()",
+          "format" : "dd/MM/yyyy HH:mm:ss",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA28" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA23" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Status_Color",
+          "label" : "Status Color",
+          "formulaExpression" : "case when \"QuoteMembe.Name\" is not null and  Product2Id is not null and \"Product.Family\" is not null and Network_Status__c = 'Ok' then 'Active'\nwhen \"QuoteMembe.Name\" is not null and  Product2Id is not null and \"Product.Family\" is not null and Network_Status__c = 'Failure' then 'Technical Problem' else\n'Reached Data Threshold' end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA29" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA28" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Status_Colour",
+          "label" : "Status Colour",
+          "formulaExpression" : " case when Status_Color = 'Active' then 1\nwhen Status_Color = 'Technical Problem' then 2 \nwhen Status_Color = 'Reached Data Threshold' then 3 end ",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA31" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA29" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "GD_formula",
+          "label" : "GD",
+          "formulaExpression" : "case \"BillingAccount.vlocity_cmt__BillCycle__c\" when 1 then 1 \nwhen 2 then 5\nwhen 3 then 15 end ",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA32" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA35" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Due_Date_Formula",
+          "label" : "Due Date",
+          "formulaExpression" : "GD_formula+14",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES1" : {
+      "action" : "schema",
+      "sources" : [ "FORMULA32" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "BillingAccount.Name",
+          "newProperties" : {
+            "label" : "Billing Account Name",
+            "name" : "BillingAccount.Name"
+          }
+        } ]
+      }
+    },
+    "EDIT_ATTRIBUTES2" : {
+      "action" : "schema",
+      "sources" : [ "EDIT_ATTRIBUTES1" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "ServiceAccount.Name",
+          "newProperties" : {
+            "label" : "Service Account Name",
+            "name" : "ServiceAccount.Name"
+          }
+        } ]
+      }
+    },
+    "FORMULA35" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA31" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "GD_Text_formula",
+          "label" : "GD Text",
+          "formulaExpression" : "case \"BillingAccount.vlocity_cmt__BillCycle__c\" when 1 then '1' \nwhen 2 then '5'\nwhen 3 then '15' end ",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN46" : {
+      "action" : "join",
+      "sources" : [ "JOIN34", "LOAD_DATASET7" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "vlocity_cmt__QuoteId__c" ],
+        "rightQualifier" : "Order",
+        "rightKeys" : [ "vlocity_cmt__QuoteId__c" ]
+      }
+    },
+    "BUCKET2" : {
+      "action" : "bucket",
+      "sources" : [ "JOIN55" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "vlocity_cmt__AddressValidationResult__c_bucket",
+          "label" : "Address Validation Result Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "To be checked",
+            "isPassthroughEnabled" : true,
+            "sourceField" : {
+              "name" : "vlocity_cmt__AddressValidationResult__c",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Passed Address Validation",
+              "sourceValues" : [ "Success", "Valid" ]
+            }, {
+              "value" : "Problem with Address Validation",
+              "sourceValues" : [ "Invalid" ]
+            }, {
+              "value" : "Failed Address Validation",
+              "sourceValues" : [ "Fails" ]
+            }, {
+              "value" : "Partially completed Address Validation",
+              "sourceValues" : [ "Partial" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA16" : {
+      "action" : "formula",
+      "sources" : [ "BUCKET3" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "vlocity_cmt__ServiceabilityData__c_check",
+          "label" : "Serviceability Data Check",
+          "formulaExpression" : "case when vlocity_cmt__ServiceabilityData__c is not null then 'Successfull' else 'Not Successful' end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA17" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA16" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "QuoteLineItem.vlocity_cmt__ConnectDate__c_formula",
+          "label" : "Date Range",
+          "formulaExpression" : "datediff(now(), \"QuoteLineItem.vlocity_cmt__ConnectDate__c\")",
+          "precision" : 18,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA24" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA17" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Select_Order_Connect_Data_Status",
+          "label" : "Select Order Connect Data Status",
+          "formulaExpression" : "case when Id is not null and (\"QuoteLineItem.Id\" is null or \"QuoteLineItem.vlocity_cmt__ConnectDate__c\" is null)\nthen 'Not Assigned' else 'Assigned' end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA25" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA24" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Create_Order_Status",
+          "label" : "Create Order Status",
+          "formulaExpression" : "case when \"OrderMember.vlocity_cmt__QuoteMemberId__c\" is null then 'Order Not Created Yet' else 'Order Created' end ",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA26" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA25" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Serviceability_Check_Status",
+          "label" : "Serviceability Check Status",
+          "formulaExpression" : "vlocity_cmt__BroadbandConnectionType__c",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA27" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA26" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Select_Product_Status",
+          "label" : "Select Product Status",
+          "formulaExpression" : "case when Id is not null and (\"QuoteLineItem.Id\" is null or \"Product.Id\" is null)\nthen 'Not Assigned' else 'Assigned' end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET3" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET2" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "vlocity_cmt__AddressValidationResult__c_bucket1",
+          "label" : "Address Validation Result Legend",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "nullBucketValue" : "To be checked",
+            "isPassthroughEnabled" : true,
+            "sourceField" : {
+              "name" : "vlocity_cmt__AddressValidationResult__c",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Success",
+              "sourceValues" : [ "Success", "Valid" ]
+            }, {
+              "value" : "Fails",
+              "sourceValues" : [ "Fails" ]
+            }, {
+              "value" : "Invalid",
+              "sourceValues" : [ "Invalid" ]
+            }, {
+              "value" : "Partial",
+              "sourceValues" : [ "Partial" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET5" : {
+      "action" : "bucket",
+      "sources" : [ "FORMULA27" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Order.vlocity_cmt__OrderStatus__c_bucket",
+          "label" : "Order Status Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "Not Submitted",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "Order.vlocity_cmt__OrderStatus__c",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Submitted",
+              "sourceValues" : [ "Activated", "Complete", "Submitted" ]
+            }, {
+              "value" : "Ready To Submit",
+              "sourceValues" : [ "Ready To Submit" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA41" : {
+      "action" : "formula",
+      "sources" : [ "BUCKET5" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Maximum__Download_Speed_formula",
+          "label" : "Maximum Download Speed",
+          "formulaExpression" : "coalesce(vlocity_cmt__MaxDownloadSpeed__c, '-')",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA42" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA41" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Maximum_Upload_Speed_formula",
+          "label" : "Maximum Upload Speed",
+          "formulaExpression" : "coalesce(vlocity_cmt__MaxUploadSpeed__c, '-')",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "LOAD_DATASET25" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "vlocity_cmt__Product2Id__c", "vlocity_cmt__ProductGroupKey__c", "vlocity_cmt__RelatedProductId__c", "vlocity_cmt__RelationshipType__c", "vlocity_cmt__RelatedProductGroupKey__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "vlocity_cmt__ProductRelationship__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "vlocity_cmt__ProductRelationship__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN47" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET2", "LOAD_DATASET25" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "ProductRelationship",
+        "rightKeys" : [ "vlocity_cmt__Product2Id__c" ]
+      }
+    },
+    "OUTPUT17" : {
+      "action" : "save",
+      "sources" : [ "FORMULA45" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Demo | ConfigureProduct",
+          "name" : "Demo_Configure_Product",
+          "folderName" : "Demo_ESM_246_Dashboards"
+        },
+        "measuresToCurrencies" : [ ]
+      }
+    },
+    "LOAD_DATASET26" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "vlocity_cmt__QuoteId__c", "vlocity_cmt__QuoteLineItemId__c", "vlocity_cmt__RelationshipType__c" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "vlocity_cmt__QuoteLineItemRelationship__c",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "vlocity_cmt__QuoteLineItemRelationship__c"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FORMULA18" : {
+      "action" : "formula",
+      "sources" : [ "JOIN53" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Configurations_Status",
+          "label" : "Configurations Status",
+          "formulaExpression" : "case when \"QLIprod_QLI.vlocity_cmt__QuoteLineItemId__c\" is not null and  \"Prod_QLI.ProductRelationship.vlocity_cmt__RelationshipType__c\" = 'ReliesOn' then 'Complete' else 'Incomplete' end ",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA33" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA18" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Status_Latest",
+          "label" : "Status Latest",
+          "formulaExpression" : "case \n\twhen\n\t Id is not null and  \"Prod_QLI.ProductRelationship.vlocity_cmt__RelationshipType__c\" = 'ReliesOn'\n\tthen   'Complete' else 'Incomplete' end\n",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA36" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA33" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Conf_Statuss_Download",
+          "label" : "Conf Statuss",
+          "formulaExpression" : "case when \"QLIprod_QLI.vlocity_cmt__QuoteLineItemId__c\" is not null and  \"Prod_QLI.ProductRelationship.vlocity_cmt__RelationshipType__c\" = 'ReliesOn' then '1 - Complete' else '2 - Incomplete' end ",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA37" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA36" ],
+      "parameters" : {
+        "partitionBy" : [ "Id" ],
+        "orderBy" : [ {
+          "fieldName" : "Conf_Statuss_Download",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Configuration_Status_Deta",
+          "label" : "Configuration Statuss",
+          "formulaExpression" : "first_value(Conf_Statuss_Download)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET6" : {
+      "action" : "bucket",
+      "sources" : [ "FORMULA40" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Configuration_Status_Deta_bucket",
+          "label" : "Configuration Status",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "isPassthroughEnabled" : true,
+            "sourceField" : {
+              "name" : "Configuration_Status_Deta",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Incomplete",
+              "sourceValues" : [ "2 - Incomplete" ]
+            }, {
+              "value" : "Complete",
+              "sourceValues" : [ "1 - Complete" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA38" : {
+      "action" : "formula",
+      "sources" : [ "FORMULA37" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "Parent_Product_formula",
+          "label" : "parentProduct",
+          "formulaExpression" : "case when \"QuoteLineItem.vlocity_cmt__ParentItemId__c\" is null then \"Prod_QLI.Name\" end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA39" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA38" ],
+      "parameters" : {
+        "partitionBy" : [ "Id" ],
+        "orderBy" : [ {
+          "fieldName" : "Conf_Statuss_Download",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "ParentProductBundle_formula",
+          "label" : "ParentProductBundle",
+          "formulaExpression" : "first_value(Parent_Product_formula)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA40" : {
+      "action" : "computeRelative",
+      "sources" : [ "FORMULA39" ],
+      "parameters" : {
+        "partitionBy" : [ "Id" ],
+        "orderBy" : [ {
+          "fieldName" : "Configuration_Status_Deta",
+          "direction" : "ASC"
+        } ],
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "TEst_formula",
+          "label" : "Test",
+          "formulaExpression" : "first_value(Parent_Product_formula)",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "FORMULA45" : {
+      "action" : "formula",
+      "sources" : [ "BUCKET6" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "RelatedProductName_formula1",
+          "label" : "Related Product Names",
+          "formulaExpression" : "coalesce(\"Prod_QLI.RelatedProduct2.Name\", '-')",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET4" : {
+      "action" : "bucket",
+      "sources" : [ "JOIN45" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "vlocity_cmt__OrderStatus__c_bucket",
+          "label" : "Order Status Bucket",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "Other",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "vlocity_cmt__OrderStatus__c",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Draft",
+              "sourceValues" : [ "Amend Requested", "Available in Pool", "Queued" ]
+            }, {
+              "value" : "In Progress",
+              "sourceValues" : [ "In Progress" ]
+            }, {
+              "value" : "Ready To Submit",
+              "sourceValues" : [ "Ready To Submit", "Submitted" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "FORMULA43" : {
+      "action" : "formula",
+      "sources" : [ "BUCKET4" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "OrderStatusColour_formula",
+          "label" : "Order Status Colour",
+          "formulaExpression" : " case when vlocity_cmt__OrderStatus__c_bucket = 'Draft' then 1\nwhen vlocity_cmt__OrderStatus__c_bucket = 'In Progress' then 2 \nwhen vlocity_cmt__OrderStatus__c_bucket = 'Ready To Submit' then 3 end ",
+          "precision" : 10,
+          "scale" : 0,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "JOIN50" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET19", "LOAD_DATASET9" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "vlocity_cmt__QuoteId__c" ],
+        "rightQualifier" : "Quote",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN51" : {
+      "action" : "join",
+      "sources" : [ "JOIN50", "LOAD_DATASET0" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Id" ],
+        "rightQualifier" : "QuoteLineItem",
+        "rightKeys" : [ "vlocity_cmt__QuoteMemberId__c" ]
+      }
+    },
+    "JOIN52" : {
+      "action" : "join",
+      "sources" : [ "JOIN51", "JOIN58" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "QuoteLineItem.Product2Id" ],
+        "rightQualifier" : "Prod_QLI",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN53" : {
+      "action" : "join",
+      "sources" : [ "JOIN52", "LOAD_DATASET26" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "QuoteLineItem.Id" ],
+        "rightQualifier" : "QLIprod_QLI",
+        "rightKeys" : [ "vlocity_cmt__QuoteLineItemId__c" ]
+      }
+    },
+    "JOIN54" : {
+      "action" : "join",
+      "sources" : [ "JOIN42", "LOAD_DATASET4" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Order.Id" ],
+        "rightQualifier" : "OrderItem",
+        "rightKeys" : [ "OrderId" ]
+      }
+    },
+    "JOIN55" : {
+      "action" : "join",
+      "sources" : [ "JOIN54", "LOAD_DATASET2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "OrderItem.Product2Id" ],
+        "rightQualifier" : "Product2OrderItem",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN56" : {
+      "action" : "join",
+      "sources" : [ "JOIN57", "LOAD_DATASET6" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "BillingAccount.ShippingState", "BillingAccount.vlocity_cmt__Status__c", "BillingAccount.Id", "BillingAccount.MasterRecordId", "BillingAccount.Type", "BillingAccount.RecordTypeId", "BillingAccount.ParentId", "BillingAccount.BillingStreet", "BillingAccount.BillingCity", "BillingAccount.BillingPostalCode", "BillingAccount.BillingCountry", "BillingAccount.ShippingStreet", "BillingAccount.ShippingCity", "BillingAccount.ShippingPostalCode", "BillingAccount.ShippingCountry", "BillingAccount.Phone", "BillingAccount.PhotoUrl", "BillingAccount.Industry", "BillingAccount.AnnualRevenue", "BillingAccount.NumberOfEmployees", "BillingAccount.Description", "BillingAccount.OwnerId", "BillingAccount.CreatedDate", "BillingAccount.LastModifiedDate", "BillingAccount.LastActivityDate", "BillingAccount.LastViewedDate", "BillingAccount.Jigsaw", "BillingAccount.JigsawCompanyId", "BillingAccount.AccountSource", "BillingAccount.vlocity_cmt__BillFrequency__c" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "vlocity_cmt__BillingAccountId__c" ],
+        "rightQualifier" : "BillingAccount",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN57" : {
+      "action" : "join",
+      "sources" : [ "JOIN43", "LOAD_DATASET6" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "ServiceAccount.BillingState", "ServiceAccount.ShippingState", "ServiceAccount.vlocity_cmt__Status__c", "ServiceAccount.Id", "ServiceAccount.MasterRecordId", "ServiceAccount.Type", "ServiceAccount.RecordTypeId", "ServiceAccount.ParentId", "ServiceAccount.BillingStreet", "ServiceAccount.BillingCity", "ServiceAccount.BillingPostalCode", "ServiceAccount.BillingCountry", "ServiceAccount.ShippingStreet", "ServiceAccount.ShippingCity", "ServiceAccount.ShippingPostalCode", "ServiceAccount.ShippingCountry", "ServiceAccount.Phone", "ServiceAccount.PhotoUrl", "ServiceAccount.Industry", "ServiceAccount.AnnualRevenue", "ServiceAccount.NumberOfEmployees", "ServiceAccount.Description", "ServiceAccount.OwnerId", "ServiceAccount.CreatedDate", "ServiceAccount.LastModifiedDate", "ServiceAccount.LastActivityDate", "ServiceAccount.LastViewedDate", "ServiceAccount.Jigsaw", "ServiceAccount.JigsawCompanyId", "ServiceAccount.AccountSource", "ServiceAccount.vlocity_cmt__BillCycle__c", "ServiceAccount.vlocity_cmt__BillFrequency__c" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "vlocity_cmt__ServiceAccountId__c" ],
+        "rightQualifier" : "ServiceAccount",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN58" : {
+      "action" : "join",
+      "sources" : [ "JOIN47", "LOAD_DATASET2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "ProductRelationship.vlocity_cmt__RelatedProductId__c" ],
+        "rightQualifier" : "RelatedProduct2",
+        "rightKeys" : [ "Id" ]
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "QuoteLineItem",
+        "type" : "LOAD_DATASET",
+        "top" : 1792,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET1" : {
+        "label" : "User",
+        "type" : "LOAD_DATASET",
+        "top" : 392,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET2" : {
+        "label" : "Product2",
+        "type" : "LOAD_DATASET",
+        "top" : 672,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET3" : {
+        "label" : "Opportunity",
+        "type" : "LOAD_DATASET",
+        "top" : 952,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET4" : {
+        "label" : "OrderItem",
+        "type" : "LOAD_DATASET",
+        "top" : 1512,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET6" : {
+        "label" : "Account",
+        "type" : "LOAD_DATASET",
+        "top" : 812,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET7" : {
+        "label" : "Order",
+        "type" : "LOAD_DATASET",
+        "top" : 1372,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET9" : {
+        "label" : "Quote",
+        "type" : "LOAD_DATASET",
+        "top" : 1652,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET10" : {
+        "label" : "UserRole",
+        "type" : "LOAD_DATASET",
+        "top" : 532,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM0" : {
+        "label" : "Flatten_UserRole",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 392,
+        "graph" : {
+          "FLATTEN0" : null
+        },
+        "connectors" : [ ]
+      },
+      "TRANSFORM1" : {
+        "label" : "Flatten_ParentName_and_Hierarchy_Grouping",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 392,
+        "left" : 532,
+        "graph" : {
+          "FLATTEN1" : null,
+          "FLATTEN2" : null
+        },
+        "connectors" : [ {
+          "source" : "FLATTEN1",
+          "target" : "FLATTEN2"
+        } ]
+      },
+      "TRANSFORM2" : {
+        "label" : "Compute_UniqueUserName",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 112,
+        "left" : 392,
+        "graph" : {
+          "FORMULA0" : null,
+          "FORMULA1" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA0",
+          "target" : "FORMULA1"
+        } ]
+      },
+      "JOIN2" : {
+        "label" : "Augment_Roles_onto_User",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 252,
+        "left" : 672
+      },
+      "FILTER0" : {
+        "label" : "User",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 532,
+        "left" : 952
+      },
+      "OUTPUT0" : {
+        "label" : "Save Opportunity",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 952,
+        "left" : 1932
+      },
+      "LOAD_DATASET13" : {
+        "label" : "OpportunityLineItem",
+        "type" : "LOAD_DATASET",
+        "top" : 1232,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM3" : {
+        "label" : "Compute Quote Fields",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 1652,
+        "left" : 392,
+        "graph" : {
+          "REPLACE0" : {
+            "parameters" : {
+              "type" : "REPLACE_UI"
+            }
+          },
+          "FORMULA4" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA5" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "REPLACE0",
+          "target" : "FORMULA4"
+        }, {
+          "source" : "FORMULA4",
+          "target" : "FORMULA5"
+        } ]
+      },
+      "JOIN4" : {
+        "label" : "Augment_Account_onto_Quote",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1511.6,
+        "left" : 532
+      },
+      "OUTPUT1" : {
+        "label" : "Save Quote",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 1652,
+        "left" : 1932
+      },
+      "JOIN5" : {
+        "label" : "Augment_Owner_onto_Opportunity",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 952,
+        "left" : 672
+      },
+      "FILTER4" : {
+        "label" : "Opportunity",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 952,
+        "left" : 952
+      },
+      "JOIN6" : {
+        "label" : "Augment_Opportunity_onto_OppLineItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1232,
+        "left" : 1232
+      },
+      "OUTPUT3" : {
+        "label" : "Save Oppty Products",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 1232,
+        "left" : 1932
+      },
+      "OUTPUT6" : {
+        "label" : "Save Order",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 1372,
+        "left" : 1932
+      },
+      "OUTPUT7" : {
+        "label" : "Save OrderItem",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 1512,
+        "left" : 1932
+      },
+      "FILTER6" : {
+        "label" : "User",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 392,
+        "left" : 672
+      },
+      "JOIN8" : {
+        "label" : "Augment_Owner_onto_Account",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 532,
+        "left" : 672
+      },
+      "LOAD_DATASET14" : {
+        "label" : "OpportunityStage",
+        "type" : "LOAD_DATASET",
+        "top" : 1092,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN9" : {
+        "label" : "Augment_OppStage_onto_Opportunity",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 952,
+        "left" : 532
+      },
+      "FILTER7" : {
+        "label" : "Account",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 812,
+        "left" : 952
+      },
+      "JOIN10" : {
+        "label" : "Augment_Account_onto_Opportunity",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 952,
+        "left" : 1232
+      },
+      "FILTER9" : {
+        "label" : "Opportunity",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 952,
+        "left" : 1092
+      },
+      "FILTER10" : {
+        "label" : "Product",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 672,
+        "left" : 391.9
+      },
+      "JOIN11" : {
+        "label" : "Augment_Product_onto_OppLineItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1232,
+        "left" : 952
+      },
+      "FILTER13" : {
+        "label" : "Account",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 812,
+        "left" : 1092
+      },
+      "FILTER14" : {
+        "label" : "Opportunity",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 952,
+        "left" : 812
+      },
+      "JOIN14" : {
+        "label" : "Augment_Opportunity_onto_Account",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 812,
+        "left" : 1512
+      },
+      "TRANSFORM4" : {
+        "label" : "Compute hasOpportunity",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 812,
+        "left" : 1652,
+        "graph" : {
+          "FORMULA3" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "DROP_FIELDS0" : null
+        },
+        "connectors" : [ {
+          "source" : "FORMULA3",
+          "target" : "DROP_FIELDS0"
+        } ]
+      },
+      "OUTPUT9" : {
+        "label" : "Save Account",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 812,
+        "left" : 1932
+      },
+      "LOAD_DATASET15" : {
+        "label" : "vlocity_cmt__OrchestrationItem__c",
+        "type" : "LOAD_DATASET",
+        "top" : 1932,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "OUTPUT10" : {
+        "label" : "Save OrchestrationItem",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 1932,
+        "left" : 1932
+      },
+      "LOAD_DATASET16" : {
+        "label" : "vlocity_cmt__OrchestrationPlan__c",
+        "type" : "LOAD_DATASET",
+        "top" : 2072,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN15" : {
+        "label" : "Augment_OrchestrationPlan_onto_OrchestrationItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1932,
+        "left" : 392
+      },
+      "FILTER17" : {
+        "label" : "Quote",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1652,
+        "left" : 952
+      },
+      "JOIN17" : {
+        "label" : "Augment_Quote_onto_Opportunity",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 812,
+        "left" : 1372
+      },
+      "LOAD_DATASET17" : {
+        "label" : "Load CSV plain_quota",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 2352,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "FILTER18" : {
+        "label" : "User",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 672,
+        "left" : 812
+      },
+      "JOIN18" : {
+        "label" : "Augment_Owner_onto_plain_quota",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2352,
+        "left" : 532.3
+      },
+      "OUTPUT11" : {
+        "label" : "Save Quota",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 2352,
+        "left" : 1932
+      },
+      "FILTER19" : {
+        "label" : "User",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 392,
+        "left" : 952
+      },
+      "OUTPUT12" : {
+        "label" : "Save User",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 392,
+        "left" : 1931.1
+      },
+      "FILTER20" : {
+        "label" : "Order",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1231.6,
+        "left" : 532
+      },
+      "JOIN19" : {
+        "label" : "Augment_Order_onto_OrderItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1371.6,
+        "left" : 532
+      },
+      "LOAD_DATASET19" : {
+        "label" : "vlocity_cmt__QuoteMember__c",
+        "type" : "LOAD_DATASET",
+        "top" : 2212,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "FILTER22" : {
+        "label" : "QuoteLineItem",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1792,
+        "left" : 392
+      },
+      "JOIN23" : {
+        "label" : "Augment_QuoteLineItem_onto_Quote",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1652,
+        "left" : 1232
+      },
+      "FILTER24" : {
+        "label" : "QuoteMember",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 2212,
+        "left" : 392
+      },
+      "OUTPUT13" : {
+        "label" : "Save QuoteMember",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 2212,
+        "left" : 1932
+      },
+      "FILTER27" : {
+        "label" : "Quote",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1652,
+        "left" : 672
+      },
+      "TRANSFORM5" : {
+        "label" : "Compute Orders",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 1372,
+        "left" : 1092,
+        "graph" : {
+          "FORMULA8" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          },
+          "FORMULA9" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            }
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA8",
+          "target" : "FORMULA9"
+        } ]
+      },
+      "FILTER28" : {
+        "label" : "Account",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 812,
+        "left" : 1232
+      },
+      "JOIN25" : {
+        "label" : "Augment_Account_onto_Order",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1372,
+        "left" : 392
+      },
+      "FILTER29" : {
+        "label" : "Order",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1372,
+        "left" : 952
+      },
+      "FILTER31" : {
+        "label" : "User",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 672,
+        "left" : 1092
+      },
+      "JOIN26" : {
+        "label" : "Augment_Owner_onto_Order",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1372,
+        "left" : 1232
+      },
+      "LOAD_DATASET20" : {
+        "label" : "RecordType",
+        "type" : "LOAD_DATASET",
+        "top" : 812,
+        "left" : 252,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN27" : {
+        "label" : "Augment_RecordType_onto_Account",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 812,
+        "left" : 532
+      },
+      "FILTER32" : {
+        "label" : "Account",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 812,
+        "left" : 812
+      },
+      "JOIN28" : {
+        "label" : "Augment_Account_onto_OrchestrationItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1932,
+        "left" : 532
+      },
+      "FILTER33" : {
+        "label" : "Quote",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1652,
+        "left" : 1092
+      },
+      "JOIN29" : {
+        "label" : "Augment_Quote_onto_Order",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1372,
+        "left" : 1512
+      },
+      "FILTER34" : {
+        "label" : "Order",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1372,
+        "left" : 812
+      },
+      "JOIN30" : {
+        "label" : "Augment_Order_onto_OrchestrationItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1932,
+        "left" : 672
+      },
+      "FILTER35" : {
+        "label" : "Account",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 672,
+        "left" : 1372
+      },
+      "JOIN31" : {
+        "label" : "Augment_ParentAccount_onto_OrchestrationItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1932,
+        "left" : 812
+      },
+      "FILTER36" : {
+        "label" : "Order",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1372,
+        "left" : 1372
+      },
+      "JOIN32" : {
+        "label" : "Augment_Order_onto_ParentOrder",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1372,
+        "left" : 1652
+      },
+      "FILTER39" : {
+        "label" : "Quote",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1652,
+        "left" : 812
+      },
+      "JOIN33" : {
+        "label" : "Augment_Quote_onto_QuoteMember",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212,
+        "left" : 672
+      },
+      "FILTER41" : {
+        "label" : "QuoteLineItem",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 1792,
+        "left" : 532
+      },
+      "JOIN34" : {
+        "label" : "Augment_QuoteLineItem_onto_QuoteMember",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212.3,
+        "left" : 811.9
+      },
+      "FILTER42" : {
+        "label" : "UserRole",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 392,
+        "left" : 252
+      },
+      "JOIN35" : {
+        "label" : "Augment_ParentName_onto_UserRole",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 392,
+        "left" : 392
+      },
+      "FILTER43" : {
+        "label" : "Active Users Only",
+        "description" : "",
+        "type" : "FILTER",
+        "top" : 252,
+        "left" : 252
+      },
+      "LOAD_DATASET21" : {
+        "label" : "Case",
+        "type" : "LOAD_DATASET",
+        "top" : 2492,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "OUTPUT14" : {
+        "label" : "Save Case",
+        "type" : "OUTPUT",
+        "top" : 2492.1,
+        "left" : 1932
+      },
+      "LOAD_DATASET22" : {
+        "label" : "Contract",
+        "type" : "LOAD_DATASET",
+        "top" : 2632.9,
+        "left" : 112.19999999999999,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN36" : {
+        "label" : "Augment_Contract_onto_Quote",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2632,
+        "left" : 530
+      },
+      "OUTPUT15" : {
+        "label" : "Save Contract",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 2632,
+        "left" : 1932.3
+      },
+      "LOAD_DATASET23" : {
+        "label" : "Asset",
+        "type" : "LOAD_DATASET",
+        "top" : 2772,
+        "left" : 112.30000000000001,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN37" : {
+        "label" : "Augment_Assets_onto_Account",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2772,
+        "left" : 392
+      },
+      "OUTPUT16" : {
+        "label" : "Asset",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 2772.1,
+        "left" : 1932.5
+      },
+      "JOIN39" : {
+        "label" : "Augment_OrderItem_onto_Product",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1372,
+        "left" : 672
+      },
+      "JOIN40" : {
+        "label" : "Augment_Assets_onto_Product",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2772,
+        "left" : 532
+      },
+      "JOIN41" : {
+        "label" : "Augment_QuoteLineItem_Onto_Product",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212,
+        "left" : 1232
+      },
+      "TRANSFORM6" : {
+        "label" : "Transform  Case",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 2492,
+        "left" : 672.3,
+        "graph" : {
+          "FORMULA10" : {
+            "parameters" : {
+              "type" : "DATE_DIFFERENCE_UI"
+            },
+            "label" : "Days Since Open"
+          },
+          "EDIT_ATTRIBUTES0" : {
+            "label" : "Edit Attributes"
+          },
+          "BUCKET0" : {
+            "label" : "Status Flag"
+          },
+          "BUCKET1" : {
+            "label" : "Bucket Sort"
+          },
+          "BUCKET9" : {
+            "label" : "Bucket"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA10",
+          "target" : "EDIT_ATTRIBUTES0"
+        }, {
+          "source" : "EDIT_ATTRIBUTES0",
+          "target" : "BUCKET0"
+        }, {
+          "source" : "BUCKET0",
+          "target" : "BUCKET1"
+        }, {
+          "source" : "BUCKET1",
+          "target" : "BUCKET9"
+        } ]
+      },
+      "TRANSFORM7" : {
+        "label" : "Transform Quote",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 1652,
+        "left" : 1372,
+        "graph" : {
+          "FORMULA11" : {
+            "parameters" : {
+              "type" : "DATE_DIFFERENCE_UI"
+            },
+            "label" : "Days Since Open"
+          },
+          "FORMULA30" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "BUCKET7" : {
+            "label" : "Bucket"
+          },
+          "BUCKET8" : {
+            "label" : "Bucket"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA11",
+          "target" : "FORMULA30"
+        }, {
+          "source" : "FORMULA30",
+          "target" : "BUCKET7"
+        }, {
+          "source" : "BUCKET7",
+          "target" : "BUCKET8"
+        } ]
+      },
+      "LOAD_DATASET24" : {
+        "label" : "vlocity_cmt__OrderMember__c",
+        "type" : "LOAD_DATASET",
+        "top" : 2911.9,
+        "left" : 112.4,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN42" : {
+        "label" : "Augment_OrderMember_Onto_QuoteMember",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212,
+        "left" : 1372
+      },
+      "JOIN43" : {
+        "label" : "Augment_Asset_onto_QuoteMember",
+        "type" : "JOIN",
+        "top" : 2772,
+        "left" : 672
+      },
+      "JOIN44" : {
+        "label" : "Augment_Order_Onto_Orderitem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1512,
+        "left" : 952
+      },
+      "JOIN45" : {
+        "label" : "Augment_OrdertoOriderItem_Onto_Product",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 1372,
+        "left" : 1792
+      },
+      "TRANSFORM8" : {
+        "label" : "Transform Contracts",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 2632,
+        "left" : 1232,
+        "graph" : {
+          "FORMULA13" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Months_StartDate_now"
+          },
+          "FORMULA15" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Contract Term Remaining"
+          },
+          "FORMULA22" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Contract Number Status"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA13",
+          "target" : "FORMULA15"
+        }, {
+          "source" : "FORMULA15",
+          "target" : "FORMULA22"
+        } ]
+      },
+      "TRANSFORM9" : {
+        "label" : "Transform Asset",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 2772,
+        "left" : 1092,
+        "graph" : {
+          "FORMULA23" : {
+            "parameters" : {
+              "type" : "DATE_NOW_UI"
+            },
+            "label" : "Formula Now"
+          },
+          "FORMULA28" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA29" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA31" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA32" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "EDIT_ATTRIBUTES1" : {
+            "label" : "Edit Attributes"
+          },
+          "EDIT_ATTRIBUTES2" : {
+            "label" : "Edit Attributes"
+          },
+          "FORMULA35" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA23",
+          "target" : "FORMULA28"
+        }, {
+          "source" : "FORMULA28",
+          "target" : "FORMULA29"
+        }, {
+          "source" : "FORMULA29",
+          "target" : "FORMULA31"
+        }, {
+          "source" : "EDIT_ATTRIBUTES1",
+          "target" : "EDIT_ATTRIBUTES2"
+        }, {
+          "source" : "FORMULA35",
+          "target" : "FORMULA32"
+        }, {
+          "source" : "FORMULA31",
+          "target" : "FORMULA35"
+        }, {
+          "source" : "FORMULA32",
+          "target" : "EDIT_ATTRIBUTES1"
+        } ]
+      },
+      "JOIN46" : {
+        "label" : "Augment_QLI_onto_Order",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212,
+        "left" : 1092
+      },
+      "TRANSFORM10" : {
+        "label" : "Transform QM",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 2212.2,
+        "left" : 1791.9,
+        "graph" : {
+          "BUCKET2" : {
+            "label" : "Address Validation Result Bucket"
+          },
+          "FORMULA16" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA17" : {
+            "parameters" : {
+              "type" : "DATE_DIFFERENCE_UI"
+            },
+            "label" : "Date Range"
+          },
+          "FORMULA24" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Select Order Connect Data Status"
+          },
+          "FORMULA25" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Create Order Status"
+          },
+          "FORMULA26" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Serviceability Check Status"
+          },
+          "FORMULA27" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Select Product Status"
+          },
+          "BUCKET3" : {
+            "label" : "Bucket"
+          },
+          "BUCKET5" : {
+            "label" : "Order Status Bucket"
+          },
+          "FORMULA41" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA42" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA16",
+          "target" : "FORMULA17"
+        }, {
+          "source" : "FORMULA17",
+          "target" : "FORMULA24"
+        }, {
+          "source" : "FORMULA24",
+          "target" : "FORMULA25"
+        }, {
+          "source" : "FORMULA25",
+          "target" : "FORMULA26"
+        }, {
+          "source" : "FORMULA26",
+          "target" : "FORMULA27"
+        }, {
+          "source" : "BUCKET3",
+          "target" : "FORMULA16"
+        }, {
+          "source" : "BUCKET2",
+          "target" : "BUCKET3"
+        }, {
+          "source" : "FORMULA27",
+          "target" : "BUCKET5"
+        }, {
+          "source" : "BUCKET5",
+          "target" : "FORMULA41"
+        }, {
+          "source" : "FORMULA41",
+          "target" : "FORMULA42"
+        } ]
+      },
+      "LOAD_DATASET25" : {
+        "label" : "vlocity_cmt__ProductRelationship__c",
+        "type" : "LOAD_DATASET",
+        "top" : 3052,
+        "left" : 112.1,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN47" : {
+        "label" : "Augment_product2_onto_ProductReleationship",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 3052,
+        "left" : 252.10000000000002
+      },
+      "OUTPUT17" : {
+        "label" : "save ConfigureProduct",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 3052.2,
+        "left" : 1932.7
+      },
+      "LOAD_DATASET26" : {
+        "label" : "vlocity_cmt__QuoteLineItemRelationship__c",
+        "type" : "LOAD_DATASET",
+        "top" : 3192,
+        "left" : 112.19999999999999,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM11" : {
+        "label" : "Transform Configure",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 3052.2,
+        "left" : 1512.7,
+        "graph" : {
+          "FORMULA18" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Configurations Status"
+          },
+          "FORMULA33" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA36" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA37" : {
+            "label" : "Formula"
+          },
+          "BUCKET6" : {
+            "label" : "Bucket"
+          },
+          "FORMULA38" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          },
+          "FORMULA39" : {
+            "label" : "Formula"
+          },
+          "FORMULA40" : {
+            "label" : "Formula"
+          },
+          "FORMULA45" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA36",
+          "target" : "FORMULA37"
+        }, {
+          "source" : "FORMULA37",
+          "target" : "FORMULA38"
+        }, {
+          "source" : "FORMULA40",
+          "target" : "BUCKET6"
+        }, {
+          "source" : "FORMULA39",
+          "target" : "FORMULA40"
+        }, {
+          "source" : "FORMULA38",
+          "target" : "FORMULA39"
+        }, {
+          "source" : "FORMULA18",
+          "target" : "FORMULA33"
+        }, {
+          "source" : "FORMULA33",
+          "target" : "FORMULA36"
+        }, {
+          "source" : "BUCKET6",
+          "target" : "FORMULA45"
+        } ]
+      },
+      "TRANSFORM12" : {
+        "label" : "Transform Order",
+        "type" : "TRANSFORM",
+        "top" : 1232,
+        "left" : 1652.1,
+        "graph" : {
+          "BUCKET4" : {
+            "label" : "Bucket"
+          },
+          "FORMULA43" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ {
+          "source" : "BUCKET4",
+          "target" : "FORMULA43"
+        } ]
+      },
+      "JOIN50" : {
+        "label" : "Augment_Quote_onto_QM",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 3052.3,
+        "left" : 530.8
+      },
+      "JOIN51" : {
+        "label" : "Augment_QLI_onto_QM",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 3052,
+        "left" : 672
+      },
+      "JOIN52" : {
+        "label" : "Augment_Product_onto_QLI",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 3052,
+        "left" : 812
+      },
+      "JOIN53" : {
+        "label" : "Augment_QLIRelationship_onto_QLI",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 3052,
+        "left" : 952
+      },
+      "JOIN54" : {
+        "label" : "Augment_QM_onto_OrderItem",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212,
+        "left" : 1512
+      },
+      "JOIN55" : {
+        "label" : "Augment_OrderItem_onto_Product",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2212,
+        "left" : 1652
+      },
+      "JOIN56" : {
+        "label" : "Join Billing Account details to Asset",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2772,
+        "left" : 952
+      },
+      "JOIN57" : {
+        "label" : "Join Service Account details to Asset",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 2771.9,
+        "left" : 812
+      },
+      "JOIN58" : {
+        "label" : "Augment_Product_onto_Relatedprduct",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 3052,
+        "left" : 392
+      }
+    },
+    "connectors" : [ {
+      "source" : "JOIN34",
+      "target" : "JOIN46"
+    }, {
+      "source" : "FILTER24",
+      "target" : "JOIN33"
+    }, {
+      "source" : "LOAD_DATASET23",
+      "target" : "JOIN37"
+    }, {
+      "source" : "LOAD_DATASET22",
+      "target" : "JOIN36"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "JOIN35"
+    }, {
+      "source" : "LOAD_DATASET10",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "JOIN35",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "FILTER43",
+      "target" : "TRANSFORM2"
+    }, {
+      "source" : "TRANSFORM2",
+      "target" : "JOIN2"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "JOIN2"
+    }, {
+      "source" : "JOIN2",
+      "target" : "FILTER0"
+    }, {
+      "source" : "JOIN17",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "LOAD_DATASET9",
+      "target" : "TRANSFORM3"
+    }, {
+      "source" : "TRANSFORM3",
+      "target" : "JOIN4"
+    }, {
+      "source" : "JOIN8",
+      "target" : "JOIN4"
+    }, {
+      "source" : "TRANSFORM7",
+      "target" : "OUTPUT1"
+    }, {
+      "source" : "JOIN10",
+      "target" : "JOIN5"
+    }, {
+      "source" : "FILTER0",
+      "target" : "JOIN5"
+    }, {
+      "source" : "JOIN5",
+      "target" : "FILTER4"
+    }, {
+      "source" : "JOIN11",
+      "target" : "JOIN6"
+    }, {
+      "source" : "FILTER4",
+      "target" : "JOIN6"
+    }, {
+      "source" : "JOIN6",
+      "target" : "OUTPUT3"
+    }, {
+      "source" : "TRANSFORM12",
+      "target" : "OUTPUT6"
+    }, {
+      "source" : "JOIN39",
+      "target" : "OUTPUT7"
+    }, {
+      "source" : "JOIN2",
+      "target" : "FILTER6"
+    }, {
+      "source" : "JOIN27",
+      "target" : "JOIN8"
+    }, {
+      "source" : "FILTER6",
+      "target" : "JOIN8"
+    }, {
+      "source" : "LOAD_DATASET3",
+      "target" : "JOIN9"
+    }, {
+      "source" : "LOAD_DATASET14",
+      "target" : "JOIN9"
+    }, {
+      "source" : "JOIN8",
+      "target" : "FILTER7"
+    }, {
+      "source" : "JOIN9",
+      "target" : "JOIN10"
+    }, {
+      "source" : "FILTER7",
+      "target" : "JOIN10"
+    }, {
+      "source" : "JOIN5",
+      "target" : "FILTER9"
+    }, {
+      "source" : "LOAD_DATASET13",
+      "target" : "JOIN11"
+    }, {
+      "source" : "FILTER10",
+      "target" : "JOIN11"
+    }, {
+      "source" : "JOIN8",
+      "target" : "FILTER13"
+    }, {
+      "source" : "JOIN5",
+      "target" : "FILTER14"
+    }, {
+      "source" : "FILTER13",
+      "target" : "JOIN14"
+    }, {
+      "source" : "FILTER14",
+      "target" : "JOIN14"
+    }, {
+      "source" : "JOIN14",
+      "target" : "TRANSFORM4"
+    }, {
+      "source" : "TRANSFORM4",
+      "target" : "OUTPUT9"
+    }, {
+      "source" : "JOIN31",
+      "target" : "OUTPUT10"
+    }, {
+      "source" : "LOAD_DATASET15",
+      "target" : "JOIN15"
+    }, {
+      "source" : "LOAD_DATASET16",
+      "target" : "JOIN15"
+    }, {
+      "source" : "JOIN23",
+      "target" : "FILTER17"
+    }, {
+      "source" : "FILTER9",
+      "target" : "JOIN17"
+    }, {
+      "source" : "FILTER17",
+      "target" : "JOIN17"
+    }, {
+      "source" : "JOIN2",
+      "target" : "FILTER18"
+    }, {
+      "source" : "LOAD_DATASET17",
+      "target" : "JOIN18"
+    }, {
+      "source" : "FILTER18",
+      "target" : "JOIN18"
+    }, {
+      "source" : "JOIN18",
+      "target" : "OUTPUT11"
+    }, {
+      "source" : "JOIN2",
+      "target" : "FILTER19"
+    }, {
+      "source" : "FILTER19",
+      "target" : "OUTPUT12"
+    }, {
+      "source" : "JOIN25",
+      "target" : "FILTER20"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "JOIN19"
+    }, {
+      "source" : "FILTER20",
+      "target" : "JOIN19"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "FILTER22"
+    }, {
+      "source" : "FILTER27",
+      "target" : "JOIN23"
+    }, {
+      "source" : "FILTER22",
+      "target" : "JOIN23"
+    }, {
+      "source" : "TRANSFORM10",
+      "target" : "OUTPUT13"
+    }, {
+      "source" : "JOIN4",
+      "target" : "FILTER27"
+    }, {
+      "source" : "JOIN44",
+      "target" : "TRANSFORM5"
+    }, {
+      "source" : "JOIN14",
+      "target" : "FILTER28"
+    }, {
+      "source" : "LOAD_DATASET7",
+      "target" : "JOIN25"
+    }, {
+      "source" : "FILTER28",
+      "target" : "JOIN25"
+    }, {
+      "source" : "JOIN25",
+      "target" : "FILTER29"
+    }, {
+      "source" : "JOIN2",
+      "target" : "FILTER31"
+    }, {
+      "source" : "TRANSFORM5",
+      "target" : "JOIN26"
+    }, {
+      "source" : "FILTER31",
+      "target" : "JOIN26"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "JOIN27"
+    }, {
+      "source" : "LOAD_DATASET20",
+      "target" : "JOIN27"
+    }, {
+      "source" : "JOIN27",
+      "target" : "FILTER32"
+    }, {
+      "source" : "JOIN15",
+      "target" : "JOIN28"
+    }, {
+      "source" : "FILTER32",
+      "target" : "JOIN28"
+    }, {
+      "source" : "JOIN23",
+      "target" : "FILTER33"
+    }, {
+      "source" : "JOIN26",
+      "target" : "JOIN29"
+    }, {
+      "source" : "FILTER33",
+      "target" : "JOIN29"
+    }, {
+      "source" : "JOIN45",
+      "target" : "FILTER34"
+    }, {
+      "source" : "JOIN28",
+      "target" : "JOIN30"
+    }, {
+      "source" : "FILTER34",
+      "target" : "JOIN30"
+    }, {
+      "source" : "JOIN8",
+      "target" : "FILTER35"
+    }, {
+      "source" : "JOIN30",
+      "target" : "JOIN31"
+    }, {
+      "source" : "FILTER35",
+      "target" : "JOIN31"
+    }, {
+      "source" : "JOIN26",
+      "target" : "FILTER36"
+    }, {
+      "source" : "JOIN29",
+      "target" : "JOIN32"
+    }, {
+      "source" : "FILTER36",
+      "target" : "JOIN32"
+    }, {
+      "source" : "JOIN4",
+      "target" : "FILTER39"
+    }, {
+      "source" : "FILTER39",
+      "target" : "JOIN33"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "FILTER41"
+    }, {
+      "source" : "JOIN33",
+      "target" : "JOIN34"
+    }, {
+      "source" : "FILTER41",
+      "target" : "JOIN34"
+    }, {
+      "source" : "LOAD_DATASET10",
+      "target" : "FILTER42"
+    }, {
+      "source" : "FILTER42",
+      "target" : "JOIN35"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "FILTER43"
+    }, {
+      "source" : "TRANSFORM6",
+      "target" : "OUTPUT14"
+    }, {
+      "source" : "TRANSFORM3",
+      "target" : "JOIN36"
+    }, {
+      "source" : "TRANSFORM8",
+      "target" : "OUTPUT15"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "JOIN37"
+    }, {
+      "source" : "TRANSFORM9",
+      "target" : "OUTPUT16"
+    }, {
+      "source" : "JOIN19",
+      "target" : "JOIN39"
+    }, {
+      "source" : "FILTER10",
+      "target" : "JOIN39"
+    }, {
+      "source" : "JOIN37",
+      "target" : "JOIN40"
+    }, {
+      "source" : "FILTER10",
+      "target" : "JOIN40"
+    }, {
+      "source" : "JOIN46",
+      "target" : "JOIN41"
+    }, {
+      "source" : "FILTER10",
+      "target" : "JOIN41"
+    }, {
+      "source" : "JOIN23",
+      "target" : "TRANSFORM7"
+    }, {
+      "source" : "JOIN41",
+      "target" : "JOIN42"
+    }, {
+      "source" : "JOIN40",
+      "target" : "JOIN43"
+    }, {
+      "source" : "FILTER24",
+      "target" : "JOIN43"
+    }, {
+      "source" : "FILTER29",
+      "target" : "JOIN44"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "JOIN44"
+    }, {
+      "source" : "JOIN32",
+      "target" : "JOIN45"
+    }, {
+      "source" : "FILTER10",
+      "target" : "JOIN45"
+    }, {
+      "source" : "LOAD_DATASET21",
+      "target" : "TRANSFORM6"
+    }, {
+      "source" : "LOAD_DATASET24",
+      "target" : "JOIN42"
+    }, {
+      "source" : "JOIN36",
+      "target" : "TRANSFORM8"
+    }, {
+      "source" : "JOIN56",
+      "target" : "TRANSFORM9"
+    }, {
+      "source" : "LOAD_DATASET7",
+      "target" : "JOIN46"
+    }, {
+      "source" : "JOIN55",
+      "target" : "TRANSFORM10"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN47"
+    }, {
+      "source" : "LOAD_DATASET25",
+      "target" : "JOIN47"
+    }, {
+      "source" : "TRANSFORM11",
+      "target" : "OUTPUT17"
+    }, {
+      "source" : "JOIN45",
+      "target" : "TRANSFORM12"
+    }, {
+      "source" : "LOAD_DATASET19",
+      "target" : "JOIN50"
+    }, {
+      "source" : "LOAD_DATASET9",
+      "target" : "JOIN50"
+    }, {
+      "source" : "LOAD_DATASET19",
+      "target" : "FILTER24"
+    }, {
+      "source" : "JOIN50",
+      "target" : "JOIN51"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "JOIN51"
+    }, {
+      "source" : "JOIN51",
+      "target" : "JOIN52"
+    }, {
+      "source" : "JOIN58",
+      "target" : "JOIN52"
+    }, {
+      "source" : "JOIN52",
+      "target" : "JOIN53"
+    }, {
+      "source" : "LOAD_DATASET26",
+      "target" : "JOIN53"
+    }, {
+      "source" : "JOIN42",
+      "target" : "JOIN54"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "JOIN54"
+    }, {
+      "source" : "JOIN54",
+      "target" : "JOIN55"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN55"
+    }, {
+      "source" : "JOIN53",
+      "target" : "TRANSFORM11"
+    }, {
+      "source" : "JOIN57",
+      "target" : "JOIN56"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "JOIN56"
+    }, {
+      "source" : "JOIN43",
+      "target" : "JOIN57"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "JOIN57"
+    }, {
+      "source" : "JOIN47",
+      "target" : "JOIN58"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN58"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "FILTER10"
+    } ],
+    "hiddenColumns" : [ ]
+  },
+  "runMode" : "full"
+}
