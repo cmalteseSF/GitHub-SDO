@@ -1,0 +1,11 @@
+{
+    "username": "lbelligoli@salesforce.com.plusnet.dev1",
+    "id": "00DMU0000008gAp2AI",
+    "connectedStatus": "Connected",
+    "accessToken": "00DMU0000008gAp!AQEAQGOKMfRYhFH_8oTcSxBVye6IURFKXQUtD16XO8woSdyP7LsaboqUBX.E3njmv1KZ3DJGH8MfswvNzUbqMBAQahN2Rqyn",
+    "instanceUrl": "https://godigital2plusnet--dev1.sandbox.my.salesforce.com",
+    "clientId": "PlatformCLI",
+    "sfdxAuthUrl": "force://PlatformCLI::5Aep861tyo6Hj7.3ByjhVAwm7AHGcMu.hZ0sWxWWRinWR4Z.aJ9eq3THag.g8fNfzr6teqG7bcJ46YeKxGMm.YL@godigital2plusnet--dev1.sandbox.my.salesforce.com",
+    "alias": "EnBw - Dev1",
+    "vbtSfdxUsername": "lbelligoli@salesforce.com.plusnet.dev1"
+}

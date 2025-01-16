@@ -1,0 +1,10 @@
+projectPath: .
+expansionPath: vlocity
+queries:
+  - DataRaptor
+  - OmniScript
+  - VlocityDataPackType: DataRaptor
+    query: Select Id, Name from %vlocity_namespace%__DRBundle__c where %vlocity_namespace%__Type__c != 'Migration'
+  - VlocityDataPackType: OmniScript
+    query: Select Id, %vlocity_namespace%__Type__c,  %vlocity_namespace%__SubType__c, %vlocity_namespace%__Language__c from %vlocity_namespace%__OmniScript__c where %vlocity_namespace%__IsActive__c
+    = true AND %vlocity_namespace%__IsProcedure__c = false
